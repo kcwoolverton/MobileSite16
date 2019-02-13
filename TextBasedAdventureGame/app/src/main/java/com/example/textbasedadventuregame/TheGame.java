@@ -20,14 +20,22 @@ public class TheGame extends AppCompatActivity {
 
     @Database(entities = {PlayerEntity.class, InventoryEntity.class}, version = 1)
     public abstract class AppDatabase extends RoomDatabase {
-        public abstract PlayerEntityDao playerDao();
-        public abstract InventoryEntityDao inventoryDao();
+        public abstract PlayerEntityDao playerEntityDao();
+        public abstract InventoryEntityDao inventoryEntityDao();
     }
 
     public interface Player {
-        String firstName = "";
-        String lastName = "";
-        int backgroundId = 0;
+        String getFirstName();
+
+        void setFirstName(String firstName);
+
+        String getLastName();
+
+        void setLastName(String lastName);
+
+        int getBackgroundId();
+
+        void setBackgroundId(int backgroundId);
     }
 
     @Entity
@@ -43,6 +51,35 @@ public class TheGame extends AppCompatActivity {
 
         @ColumnInfo(name = "background")
         public int backgroundId;
+
+        public String getFirstName() {
+            return this.firstName;
+        }
+
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public String getLastName() {
+            return this.lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public int getBackgroundId() {
+            return this.backgroundId;
+        }
+
+        public void setBackgroundId(int backgroundId) {
+            this.backgroundId = backgroundId;
+        }
+
+        public PlayerEntity(String firstName, String lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
     }
 
     @Dao
@@ -68,8 +105,6 @@ public class TheGame extends AppCompatActivity {
     }
 
     public interface Inventory {
-        char object1 = 0;
-        char object2 = 0;
     }
 
     @Entity
