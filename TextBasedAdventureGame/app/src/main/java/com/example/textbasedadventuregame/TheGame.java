@@ -24,22 +24,8 @@ public class TheGame extends AppCompatActivity {
         public abstract InventoryEntityDao inventoryEntityDao();
     }
 
-    public interface Player {
-        String getFirstName();
-
-        void setFirstName(String firstName);
-
-        String getLastName();
-
-        void setLastName(String lastName);
-
-        int getBackgroundId();
-
-        void setBackgroundId(int backgroundId);
-    }
-
     @Entity
-    public class PlayerEntity implements Player {
+    public class PlayerEntity {
         @PrimaryKey
         public int uid;
 
@@ -104,11 +90,8 @@ public class TheGame extends AppCompatActivity {
         void delete(PlayerEntity playerEntities);
     }
 
-    public interface Inventory {
-    }
-
     @Entity
-    public class InventoryEntity implements Inventory {
+    public class InventoryEntity {
         @PrimaryKey
         public int uid;
     }
