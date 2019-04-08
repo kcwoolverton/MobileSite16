@@ -3,4 +3,18 @@
     <string name="mobile_site_16">Mobile Site 16</string>
     <string name="tap_to_continue_home_screen">Tap to Continue</string>
     <string name="title_activity_game_load_page">GameLoadPage</string>
+    <string name="first_name">First Name</string>
+    <string name="user_input_name">Name</string>
+    <string name="next">Next</string>
+    <string name="last_name">Last Name</string>
+    <string name="cell_intro_description">Description of Cell here</string>
+    <string name="examine_sink">Examine sink</string>
+    <string name="examine_bed">Examine bed</string>
+    <string name="examine_d_51314">Examine D-51314</string>
+    <string name="examine_glass_wall">Examine glass wall</string>
+    <string name="examine_toilet">Examine toilet</string>
+    <string name="examine_sink_mirror">Examine sink mirror</string>
+    <string name="turn_on_faucet">turn on faucet</string>
+    <string name="take_pipe">take pipe</string>
+    <string name="return_to_cell">Return to cell</string>
 </resources>

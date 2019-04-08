@@ -2,11 +2,9 @@ package com.example.textbasedadventuregame;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class GameLoadPage extends AppCompatActivity {
 
@@ -14,13 +12,11 @@ public class GameLoadPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_load_page);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 
     public void makeNewGame(View view) {
         // Create an Intent to start the second activity
-        Intent newGameIntent = new Intent(this, TheGame.class);
+        Intent newGameIntent = new Intent(this, SelectName.class);
 
         // Start the new activity.
         startActivity(newGameIntent);
@@ -28,7 +24,7 @@ public class GameLoadPage extends AppCompatActivity {
 
     public void continueGame(View view) {
         // Create an Intent to start the second activity
-        Intent continueGameIntent = new Intent(this, TheGame.class);
+        Intent continueGameIntent = new Intent(this, SelectName.class);
 
         // Start the new activity.
         startActivity(continueGameIntent);

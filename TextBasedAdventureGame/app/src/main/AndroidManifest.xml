@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TheGame"></activity>
+        <activity android:name=".CellBody"></activity>
+        <activity android:name=".CellSink" />
+        <activity android:name=".CellWall" />
+        <activity android:name=".Introduction" />
+        <activity android:name=".PlayerCell" />
+        <activity android:name=".SelectBackground" />
+        <activity android:name=".SelectName" />
         <activity
             android:name=".GameLoadPage"
             android:label="@string/title_activity_game_load_page"

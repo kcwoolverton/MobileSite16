@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CellWall">
+
+    <RadioGroup
+        android:id="@+id/intro_cell_wall_option_group"
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="213dp">
+
+        <RadioButton
+            android:id="@+id/examine_crack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Examine crack in the wall" />
+
+        <RadioButton
+            android:id="@+id/punch_wall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punch the wall" />
+
+        <RadioButton
+            android:id="@+id/return_to_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/return_to_cell" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="347dp"
+        android:layout_height="202dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="500dp"
+        android:text="Description of glass cell wall"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <Button
+        android:id="@+id/intro_cell_next_button"
+        android:onClick="onNextCellButtonClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="154dp"
+        android:layout_marginRight="154dp"
+        android:layout_marginBottom="149dp"
+        android:text="Next" />
+
+    <TextView
+        android:id="@+id/additional_cell_text"
+        android:layout_width="349dp"
+        android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginBottom="390dp" />
+
+</RelativeLayout>
