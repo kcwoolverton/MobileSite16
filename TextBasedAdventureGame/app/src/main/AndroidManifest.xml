@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CellBody"></activity>
+        <activity android:name=".PrisonMedbay"></activity>
+        <activity android:name=".PrisonStairwell" />
+        <activity android:name=".PrisonCheckpoint" />
+        <activity android:name=".Prison" />
+        <activity android:name=".CellBody" />
         <activity android:name=".CellSink" />
         <activity android:name=".CellWall" />
         <activity android:name=".Introduction" />
