@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrisonCheckpoint">
+    tools:context=".FoundationEmployeeLivingQuartersStairwell">
 
     <RadioGroup
-        android:id="@+id/prison_checkpoint_option_group"
+        android:id="@+id/foundation_employees_stairwell_option_group"
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -18,22 +18,22 @@
         android:layout_marginBottom="213dp">
 
         <RadioButton
-            android:id="@+id/examine_security_station"
+            android:id="@+id/from_felq_go_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Examine security station" />
+            android:text="Go up the stairs" />
 
         <RadioButton
-            android:id="@+id/open_stairwell_door"
+            android:id="@+id/from_felq_go_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Open the stairwell door" />
+            android:text="Go down the stairs" />
 
         <RadioButton
-            android:id="@+id/return_to_prison"
+            android:id="@+id/return_to_felq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go back to the cells" />
+            android:text="Enter the Foundation Employees Living Quarters" />
     </RadioGroup>
 
     <TextView
@@ -47,13 +47,13 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="Description of prison checkpoint"
+        android:text="Description of the foundation employees living quarters stairwell"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
-        android:id="@+id/prison_checkpoint_next_button"
-        android:onClick="onNextPrisonCheckpointButtonClick"
+        android:id="@+id/intro_cell_next_button"
+        android:onClick="onNextCellButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

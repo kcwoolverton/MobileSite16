@@ -11,11 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Prison extends AppCompatActivity {
+public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
-    public void onNextPrisonButtonClick(View view) {
-        RadioGroup group = (RadioGroup) findViewById(R.id.prison_option_group);
+    public void onNextFoundationEmployeesButtonClick(View view) {
+        RadioGroup group = (RadioGroup) findViewById(R.id.foundation_employees_option_group);
         int checkedButtonId = group.getCheckedRadioButtonId();
         if (checkedButtonId == -1) {
             Context context = getApplicationContext();
@@ -63,17 +63,11 @@ public class Prison extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("examine showers text");
             } else if (position == 3) {
-                // They chose to look at the checkpoint
-                Intent checkpointIntent = new Intent(this, PrisonCheckpoint.class);
+                // They chose to return to go to the stairwell
+                Intent stairIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
 
                 // Start the new activity.
-                startActivity(checkpointIntent);
-            } else if (position == 4) {
-                // They chose to return to cell
-                Intent cellIntent = new Intent(this, PlayerCell.class);
-
-                // Start the new activity.
-                startActivity(cellIntent);
+                startActivity(stairIntent);
             } else {
                 // panic?
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
@@ -91,6 +85,6 @@ public class Prison extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prison);
+        setContentView(R.layout.activity_foundation_employee_living_quarters);
     }
 }

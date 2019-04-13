@@ -36,6 +36,12 @@
             android:text="Examine the showers" />
 
         <RadioButton
+            android:id="@+id/go_to_checkpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Look at the security checkpoint" />
+
+        <RadioButton
             android:id="@+id/return_to_cell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
