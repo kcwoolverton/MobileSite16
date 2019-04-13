@@ -33,37 +33,40 @@ public class CellSink extends AppCompatActivity {
                 // They chose look at the mirror
                 Context context = getApplicationContext();
                 CharSequence text1 = "existential crisis";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.examine_sink_mirror);
+                TextView text = (TextView) findViewById(R.id.additional_cell_sink_text);
                 text.setText("existential crisis");
             } else if (position == 1) {
                 // They chose to turn on the faucet.
                 Context context = getApplicationContext();
-                CharSequence text1 = "faucet on";
-                int duration = Toast.LENGTH_SHORT;
+                TextView text = (TextView) findViewById(R.id.additional_cell_sink_text);
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.turn_on_faucet);
-                text.setText("faucet on");
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                InventoryEntity inventory = inventoryList.get(0);
+                boolean checkPipe = inventory.getPipe();
+
+                if (checkPipe) {
+                    text.setText("broken faucet on");
+                }
+
+                else {
+                    text.setText("regular faucet on");
+                }
             } else if (position == 2) {
                 // They chose to take pipe
                 Context context = getApplicationContext();
                 CharSequence text1 = "take pipe";
-                int duration = Toast.LENGTH_SHORT;
+                TextView text = (TextView) findViewById(R.id.additional_cell_sink_text);
+                text.setText("You took the pipe.");
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.examine_sink_mirror);
-                text.setText("take pipe");
                 InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
                 List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
                 InventoryEntity inventory = inventoryList.get(0);
                 inventory.setPipe(true);
                 inventoryEntityDao.update(inventory);
+
+                RadioButton button = (RadioButton) group.getChildAt(2);
+                button.setVisibility(View.GONE);
             } else if (position == 3) {
                 // They chose to go back to the cell
                 Intent cellIntent = new Intent(this, PlayerCell.class);
@@ -72,15 +75,9 @@ public class CellSink extends AppCompatActivity {
                 startActivity(cellIntent);
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_cell_sink_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 
@@ -89,5 +86,20 @@ public class CellSink extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cell_sink);
         DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
+
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+        InventoryEntity inventory = inventoryList.get(0);
+        boolean hasPipe = inventory.getPipe();
+
+        if (hasPipe) {
+            RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_sink_option_group);
+            RadioButton button = (RadioButton) group.getChildAt(2);
+            button.setVisibility(View.GONE);
+        } else {
+            RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_sink_option_group);
+            RadioButton button = (RadioButton) group.getChildAt(2);
+            button.setVisibility(View.VISIBLE);
+        }
     }
 }
