@@ -88,5 +88,6 @@ public class CellBody extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cell_body);
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
     }
 }

@@ -58,12 +58,6 @@ public class PrisonCheckpoint extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 
@@ -71,5 +65,6 @@ public class PrisonCheckpoint extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prison_checkpoint);
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
     }
 }
