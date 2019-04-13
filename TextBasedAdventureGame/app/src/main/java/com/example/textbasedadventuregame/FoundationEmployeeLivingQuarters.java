@@ -11,8 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
+
+    public boolean hasId;
 
     public void onNextFoundationEmployeesButtonClick(View view) {
         RadioGroup group = (RadioGroup) findViewById(R.id.foundation_employees_option_group);
@@ -28,41 +32,47 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
             RadioButton selectedButton = findViewById(checkedButtonId);
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
-                // They chose to examine other cells
-                Context context = getApplicationContext();
-                CharSequence text1 = "other cell description";
-                int duration = Toast.LENGTH_SHORT;
+                // They chose to go to the armory
+                if (hasId) {
+                    Intent armoryIntent = new Intent(this, FoundationEmployeeLivingQuartersArmory.class);
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("other cell description");
+                    // Start the new activity.
+                    startActivity(armoryIntent);
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_quarters_text);
+                    text.setText("The door is locked. An ID scanner to the side of the door is flashing red.");
+                }
             } else if (position == 1) {
-                // They chose to examine medbay
-                Context context = getApplicationContext();
-                CharSequence text1 = "go to medbay";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("go to medbay");
-
-                Intent medbayIntent = new Intent(this, PrisonMedbay.class);
+                // They chose to examine Dr. TODO's room
+                Intent room1Intent = new Intent(this, FoundationEmployeeLivingQuartersDr1Room.class);
 
                 // Start the new activity.
-                startActivity(medbayIntent);
+                startActivity(room1Intent);
             } else if (position == 2) {
-                // They chose to examine showers
-                Context context = getApplicationContext();
-                CharSequence text1 = "examine showers text";
-                int duration = Toast.LENGTH_SHORT;
+                // They chose to examine Dr. TODO's room
+                Intent room2Intent = new Intent(this, FoundationEmployeeLivingQuartersDr2Room.class);
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("examine showers text");
+                // Start the new activity.
+                startActivity(room2Intent);
             } else if (position == 3) {
+                // They chose to examine Dr. TODO's room
+                Intent room3Intent = new Intent(this, FoundationEmployeeLivingQuartersDr3Room.class);
+
+                // Start the new activity.
+                startActivity(room3Intent);
+            } else if (position == 4) {
+                // They chose to examine Sec. Guard TODO's room
+                Intent room4Intent = new Intent(this, FoundationEmployeeLivingQuartersSecurityGuardRoom.class);
+
+                // Start the new activity.
+                startActivity(room4Intent);
+            } else if (position == 5) {
+                // They chose to examine the recreational lounge
+                Intent loungeIntent = new Intent(this, FoundationEmployeeLivingQuartersLounge.class);
+
+                // Start the new activity.
+                startActivity(loungeIntent);
+            } else if (position == 6) {
                 // They chose to return to go to the stairwell
                 Intent stairIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
 
@@ -70,15 +80,9 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
                 startActivity(stairIntent);
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_quarters_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 
@@ -86,5 +90,12 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foundation_employee_living_quarters);
+
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
+
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+        InventoryEntity inventory = inventoryList.get(0);
+        this.hasId = inventory.getFoundationEmployeeIdCard();
     }
 }

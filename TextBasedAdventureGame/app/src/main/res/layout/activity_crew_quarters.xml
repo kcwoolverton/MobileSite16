@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FoundationEmployeeLivingQuarters">
+    tools:context=".CrewQuarters">
 
     <RadioGroup
-        android:id="@+id/foundation_employees_option_group"
+        android:id="@+id/crew_quarters_option_group"
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -18,46 +18,34 @@
         android:layout_marginBottom="213dp">
 
         <RadioButton
-            android:id="@+id/go_to_armory"
+            android:id="@+id/galley"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the armory" />
+            android:text="Go to the galley" />
 
         <RadioButton
-            android:id="@+id/dr_1_room"
+            android:id="@+id/examine_crew_medbay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the first open room" />
+            android:text="Go to the crew's medbay" />
 
         <RadioButton
-            android:id="@+id/dr_2_room"
+            android:id="@+id/go_to_gym"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the second open room" />
+            android:text="Examine the crew's gym" />
 
         <RadioButton
-            android:id="@+id/dr_3_room"
+            android:id="@+id/go_to_crew_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the third open room" />
+            android:text="Look at the crew's rooms" />
 
         <RadioButton
-            android:id="@+id/sec_guard_room"
+            android:id="@+id/go_to_crew_stairs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the fourth open room" />
-
-        <RadioButton
-            android:id="@+id/go_to_scp_lounge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go to the floor's lounge" />
-
-        <RadioButton
-            android:id="@+id/return_to_employee_stairwell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go back to the stairs" />
+            android:text="Go to the stairs" />
     </RadioGroup>
 
     <TextView
@@ -71,13 +59,13 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="Description of foundation employee living quarters"
+        android:text="Description of crew quarters floor"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
-        android:id="@+id/foundation_employees_next_button"
-        android:onClick="onNextFoundationEmployeesButtonClick"
+        android:id="@+id/crew_quarters_next_button"
+        android:onClick="onNextCrewQuartersButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -89,7 +77,7 @@
         android:text="Next" />
 
     <TextView
-        android:id="@+id/additional_quarters_text"
+        android:id="@+id/additional_crew_quarters_text"
         android:layout_width="349dp"
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"

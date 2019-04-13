@@ -11,11 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FoundationEmployeeLivingQuartersStairwell extends AppCompatActivity {
+public class CrewQuartersStairwell extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
-    public void onNextCellButtonClick(View view) {
-        RadioGroup group = (RadioGroup) findViewById(R.id.foundation_employees_stairwell_option_group);
+    public void onNextCrewQuartersStairwellButtonClick(View view) {
+        RadioGroup group = (RadioGroup) findViewById(R.id.crew_quarters_stairwell_option_group);
         int checkedButtonId = group.getCheckedRadioButtonId();
         if (checkedButtonId == -1) {
             Context context = getApplicationContext();
@@ -29,25 +29,21 @@ public class FoundationEmployeeLivingQuartersStairwell extends AppCompatActivity
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // Go up
-                Intent crewQuartersStairsIntent = new Intent(this, CrewQuartersStairwell.class);
-
-                // Start the new activity.
-                startActivity(crewQuartersStairsIntent);
             } else if (position == 1) {
                 // Go down
-                Intent prisonStairsIntent = new Intent(this, PrisonStairwell.class);
+                Intent foundationStairsIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
 
                 // Start the new activity.
-                startActivity(prisonStairsIntent);
+                startActivity(foundationStairsIntent);
             } else if (position == 2) {
-                // Enter living quarters
-                Intent livingQuartersIntent = new Intent(this, FoundationEmployeeLivingQuarters.class);
+                // Enter crew living quarters
+                Intent livingQuartersIntent = new Intent(this, CrewQuarters.class);
 
                 // Start the new activity.
                 startActivity(livingQuartersIntent);
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_cq_stairwell_text);
                 text.setText("panic?");
             }
         }
@@ -56,6 +52,6 @@ public class FoundationEmployeeLivingQuartersStairwell extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foundation_employee_living_quarters_stairwell);
+        setContentView(R.layout.activity_crew_quarters_stairwell);
     }
 }
