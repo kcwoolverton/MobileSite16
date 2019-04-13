@@ -29,6 +29,10 @@ public class FoundationEmployeeLivingQuartersStairwell extends AppCompatActivity
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // Go up
+                Intent crewQuartersStairsIntent = new Intent(this, CrewQuartersStairwell.class);
+
+                // Start the new activity.
+                startActivity(crewQuartersStairsIntent);
             } else if (position == 1) {
                 // Go down
                 Intent prisonStairsIntent = new Intent(this, PrisonStairwell.class);

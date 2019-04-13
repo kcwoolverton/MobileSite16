@@ -11,11 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
+public class CrewQuartersStairwell extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
-    public void onNextFoundationEmployeesButtonClick(View view) {
-        RadioGroup group = (RadioGroup) findViewById(R.id.foundation_employees_option_group);
+    public void onNextCrewQuartersStairwellButtonClick(View view) {
+        RadioGroup group = (RadioGroup) findViewById(R.id.crew_quarters_stairwell_option_group);
         int checkedButtonId = group.getCheckedRadioButtonId();
         if (checkedButtonId == -1) {
             Context context = getApplicationContext();
@@ -28,32 +28,22 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
             RadioButton selectedButton = findViewById(checkedButtonId);
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
-                // They chose to go to the armory
-
+                // Go up
             } else if (position == 1) {
-                // They chose to examine Dr. TODO's room
-
-            } else if (position == 2) {
-                // They chose to examine Dr. TODO's room
-
-            } else if (position == 3) {
-                // They chose to examine Dr. TODO's room
-
-            } else if (position == 4) {
-                // They chose to examine Sec. Guard TODO's room
-
-            } else if (position == 5) {
-                // They chose to examine the recreational lounge
-
-            } else if (position == 6) {
-                // They chose to return to go to the stairwell
-                Intent stairIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
+                // Go down
+                Intent foundationStairsIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
 
                 // Start the new activity.
-                startActivity(stairIntent);
+                startActivity(foundationStairsIntent);
+            } else if (position == 2) {
+                // Enter crew living quarters
+                Intent livingQuartersIntent = new Intent(this, CrewQuarters.class);
+
+                // Start the new activity.
+                startActivity(livingQuartersIntent);
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_quarters_text);
+                TextView text = (TextView) findViewById(R.id.additional_cq_stairwell_text);
                 text.setText("panic?");
             }
         }
@@ -62,6 +52,6 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foundation_employee_living_quarters);
+        setContentView(R.layout.activity_crew_quarters_stairwell);
     }
 }
