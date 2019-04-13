@@ -11,6 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class CellSink extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
@@ -28,7 +30,7 @@ public class CellSink extends AppCompatActivity {
             RadioButton selectedButton = findViewById(checkedButtonId);
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
-                // They chose look at the toilet
+                // They chose look at the mirror
                 Context context = getApplicationContext();
                 CharSequence text1 = "existential crisis";
                 int duration = Toast.LENGTH_SHORT;
@@ -48,7 +50,7 @@ public class CellSink extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.turn_on_faucet);
                 text.setText("faucet on");
             } else if (position == 2) {
-                // They chose look at the toilet
+                // They chose to take pipe
                 Context context = getApplicationContext();
                 CharSequence text1 = "take pipe";
                 int duration = Toast.LENGTH_SHORT;
@@ -57,6 +59,11 @@ public class CellSink extends AppCompatActivity {
                 toast.show();
                 TextView text = (TextView) findViewById(R.id.examine_sink_mirror);
                 text.setText("take pipe");
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                InventoryEntity inventory = inventoryList.get(0);
+                inventory.setPipe(true);
+                inventoryEntityDao.update(inventory);
             } else if (position == 3) {
                 // They chose to go back to the cell
                 Intent cellIntent = new Intent(this, PlayerCell.class);
@@ -81,5 +88,6 @@ public class CellSink extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cell_sink);
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
     }
 }

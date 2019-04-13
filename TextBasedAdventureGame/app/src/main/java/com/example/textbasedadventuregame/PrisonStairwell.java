@@ -58,12 +58,6 @@ public class PrisonStairwell extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 

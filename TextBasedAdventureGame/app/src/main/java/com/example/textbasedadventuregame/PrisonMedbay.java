@@ -11,6 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class PrisonMedbay extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
@@ -37,6 +39,11 @@ public class PrisonMedbay extends AppCompatActivity {
                 toast.show();
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("cabinets description");
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                InventoryEntity inventory = inventoryList.get(0);
+                inventory.setMedkit(true);
+                inventoryEntityDao.update(inventory);
             } else if (position == 1) {
                 // They chose to go through the papers
                 Context context = getApplicationContext();
@@ -67,6 +74,11 @@ public class PrisonMedbay extends AppCompatActivity {
                 toast.show();
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("labcoat");
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                InventoryEntity inventory = inventoryList.get(0);
+                inventory.setPrisonFloorIdCard(true);
+                inventoryEntityDao.update(inventory);
             } else if (position == 4) {
                 // They chose to go through the medical instruments
                 Context context = getApplicationContext();

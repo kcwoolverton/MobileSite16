@@ -21,10 +21,13 @@ public class SelectName extends AppCompatActivity {
         String firstName = firstNameView.getText().toString();
         String lastName = lastNameView.getText().toString();
         PlayerEntity player = new PlayerEntity(firstName, lastName);
+        InventoryEntity inventory = new InventoryEntity();
 
         // Save to db
         PlayerEntityDao playerEntityDao = DBINSTANCE.playerEntityDao();
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
         playerEntityDao.insert(player);
+        inventoryEntityDao.insert(inventory);
 
         PlayerEntityDao dao = DBINSTANCE.playerEntityDao();
         List<PlayerEntity> players = dao.getAll();

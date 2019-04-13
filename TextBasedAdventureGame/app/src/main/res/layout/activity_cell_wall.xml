@@ -9,7 +9,7 @@
     <RadioGroup
         android:id="@+id/intro_cell_wall_option_group"
         android:layout_width="348dp"
-        android:layout_height="wrap_content"
+        android:layout_height="144dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
@@ -34,6 +34,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/return_to_cell" />
+
+        <RadioButton
+            android:id="@+id/smash_wall_with_pipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smash wall with pipe" />
     </RadioGroup>
 
     <TextView

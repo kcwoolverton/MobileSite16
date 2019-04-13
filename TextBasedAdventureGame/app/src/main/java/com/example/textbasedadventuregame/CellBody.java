@@ -11,6 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class CellBody extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
@@ -47,6 +49,11 @@ public class CellBody extends AppCompatActivity {
                 toast.show();
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("dead body torso description");
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                InventoryEntity inventory = inventoryList.get(0);
+                inventory.setShiv(true);
+                inventoryEntityDao.update(inventory);
             } else if (position == 2) {
                 // They chose to punch wall
                 Context context = getApplicationContext();

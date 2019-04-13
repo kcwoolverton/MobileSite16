@@ -11,6 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class CellWall extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
@@ -53,17 +55,17 @@ public class CellWall extends AppCompatActivity {
 
                 // Start the new activity.
                 startActivity(cellIntent);
+            } else if (position == 3) {
+                // Tear down that wall!
+                Intent prisonIntent = new Intent(this, Prison.class);
+
+                // Start the new activity.
+                startActivity(prisonIntent);
             } else {
-                // panic?
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("panic?");
+                    // panic?
+                    TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                    text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 
@@ -71,5 +73,22 @@ public class CellWall extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cell_wall);
+
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
+
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+        InventoryEntity inventory = inventoryList.get(0);
+        boolean hasPipe = inventory.getPipe();
+
+        if (!hasPipe) {
+            RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_wall_option_group);
+            RadioButton button = (RadioButton) group.getChildAt(3);
+            button.setVisibility(View.GONE);
+        } else {
+            RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_wall_option_group);
+            RadioButton button = (RadioButton) group.getChildAt(3);
+            button.setVisibility(View.VISIBLE);
+        }
     }
 }
