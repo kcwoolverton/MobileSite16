@@ -29,18 +29,18 @@ public class PrisonStairwell extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // Go up
-                Intent cellIntent = new Intent(this, PlayerCell.class);
+                Intent livingQuartersIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
 
                 // Start the new activity.
-                startActivity(cellIntent);
+                startActivity(livingQuartersIntent);
             } else if (position == 1) {
                 // Go down
             } else if (position == 2) {
                 // Go back to prison
-                Intent cellIntent = new Intent(this, PlayerCell.class);
+                Intent prisonIntent = new Intent(this, Prison.class);
 
                 // Start the new activity.
-                startActivity(cellIntent);
+                startActivity(prisonIntent);
             } else {
                 // panic?
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);

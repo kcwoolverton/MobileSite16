@@ -11,6 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class PrisonCheckpoint extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
@@ -53,6 +55,12 @@ public class PrisonCheckpoint extends AppCompatActivity {
 
                 // Start the new activity.
                 startActivity(prisonIntent);
+            } else if (position == 3) {
+                // They opened the door with the id
+                Intent stairwellIntent = new Intent(this, PrisonStairwell.class);
+
+                // Start the new activity.
+                startActivity(stairwellIntent);
             } else {
                 // panic?
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
@@ -66,5 +74,20 @@ public class PrisonCheckpoint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prison_checkpoint);
         DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
+
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+        InventoryEntity inventory = inventoryList.get(0);
+        boolean hasId = inventory.getPrisonFloorIdCard();
+
+        if (!hasId) {
+            RadioGroup group = (RadioGroup) findViewById(R.id.prison_checkpoint_option_group);
+            RadioButton button = (RadioButton) group.getChildAt(3);
+            button.setVisibility(View.GONE);
+        } else {
+            RadioGroup group = (RadioGroup) findViewById(R.id.prison_checkpoint_option_group);
+            RadioButton button = (RadioButton) group.getChildAt(3);
+            button.setVisibility(View.VISIBLE);
+        }
     }
 }
