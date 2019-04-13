@@ -29,12 +29,6 @@ public class PlayerCell extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose look at the toilet
-                Context context = getApplicationContext();
-                CharSequence text1 = "toilet?";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("toilet description here");
             } else if (position == 1) {
@@ -64,12 +58,6 @@ public class PlayerCell extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 

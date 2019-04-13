@@ -31,64 +31,72 @@ public class PrisonMedbay extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to search through cabinets
-                Context context = getApplicationContext();
-                CharSequence text1 = "cabinets description";
-                int duration = Toast.LENGTH_SHORT;
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+                boolean tookMedkit = status.getTookPrisonMedkit();
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("cabinets description");
                 InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
                 List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
                 InventoryEntity inventory = inventoryList.get(0);
-                inventory.setMedkit(true);
-                inventoryEntityDao.update(inventory);
+
+                if (tookMedkit) {
+                    TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
+                    text.setText("cabinets description without medkit");
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
+                    text.setText("cabinets description with medkit");
+                    inventory.setMedkit(true);
+                    inventoryEntityDao.update(inventory);
+                }
             } else if (position == 1) {
                 // They chose to go through the papers
-                Context context = getApplicationContext();
-                CharSequence text1 = "papers";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
                 text.setText("papers");
             } else if (position == 2) {
                 // They chose to go through the desk
-                Context context = getApplicationContext();
-                CharSequence text1 = "desk";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
                 text.setText("desk");
             } else if (position == 3) {
                 // They chose to go through the labcoat
-                Context context = getApplicationContext();
-                CharSequence text1 = "labcoat";
-                int duration = Toast.LENGTH_SHORT;
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+                boolean tookPrisonFloorIdCard = status.getTookPrisonIdCard();
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("labcoat");
                 InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
                 List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
                 InventoryEntity inventory = inventoryList.get(0);
-                inventory.setPrisonFloorIdCard(true);
-                inventoryEntityDao.update(inventory);
+
+                if (tookPrisonFloorIdCard) {
+                    TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
+                    text.setText("labcoat without id card");
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
+                    text.setText("labcoat with id card");
+                    inventory.setPrisonFloorIdCard(true);
+                    inventoryEntityDao.update(inventory);
+                }
             } else if (position == 4) {
                 // They chose to go through the medical instruments
-                Context context = getApplicationContext();
-                CharSequence text1 = "medical instruments";
-                int duration = Toast.LENGTH_SHORT;
+                TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("medical instruments");
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+                boolean tookScalpel = status.getTookPrisonMedbayScalpel();
+
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                InventoryEntity inventory = inventoryList.get(0);
+
+                if (tookScalpel) {
+                    text.setText("medical instruments without scalpel");
+                } else {
+                    text.setText("medical instruments with scalpel");
+                    inventory.setScalpel(true);
+                    inventoryEntityDao.update(inventory);
+                }
             } else if (position == 5) {
                 // They chose to return to the cells
                 Intent prisonIntent = new Intent(this, Prison.class);
@@ -100,12 +108,6 @@ public class PrisonMedbay extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 

@@ -40,12 +40,12 @@ public class CellSink extends AppCompatActivity {
                 Context context = getApplicationContext();
                 TextView text = (TextView) findViewById(R.id.additional_cell_sink_text);
 
-                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
-                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
-                InventoryEntity inventory = inventoryList.get(0);
-                boolean checkPipe = inventory.getPipe();
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+                boolean tookPipe = status.getTookCellSinkPipe();
 
-                if (checkPipe) {
+                if (tookPipe) {
                     text.setText("broken faucet on");
                 }
 

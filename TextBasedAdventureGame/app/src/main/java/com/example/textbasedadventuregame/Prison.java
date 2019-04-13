@@ -29,38 +29,17 @@ public class Prison extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to examine other cells
-                Context context = getApplicationContext();
-                CharSequence text1 = "other cell description";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_text);
                 text.setText("other cell description");
             } else if (position == 1) {
                 // They chose to examine medbay
-                Context context = getApplicationContext();
-                CharSequence text1 = "go to medbay";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("go to medbay");
-
                 Intent medbayIntent = new Intent(this, PrisonMedbay.class);
 
                 // Start the new activity.
                 startActivity(medbayIntent);
             } else if (position == 2) {
                 // They chose to examine showers
-                Context context = getApplicationContext();
-                CharSequence text1 = "examine showers text";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_text);
                 text.setText("examine showers text");
             } else if (position == 3) {
                 // They chose to look at the checkpoint

@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {PlayerEntity.class, InventoryEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {PlayerEntity.class, InventoryEntity.class, StatusEntity.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase DBINSTANCE;
 
@@ -27,4 +27,5 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract PlayerEntityDao playerEntityDao();
     public abstract InventoryEntityDao inventoryEntityDao();
+    public abstract StatusEntityDao statusEntityDao();
 }

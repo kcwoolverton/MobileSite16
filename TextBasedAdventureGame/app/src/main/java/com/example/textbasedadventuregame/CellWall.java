@@ -31,14 +31,10 @@ public class CellWall extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to examine crack in wall
-                Context context = getApplicationContext();
-
                 TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
                 text.setText("crack in wall description");
             } else if (position == 1) {
                 // They chose to punch wall
-                Context context = getApplicationContext();;
-
                 TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
                 text.setText("punched wall");
             } else if (position == 2) {
@@ -48,12 +44,25 @@ public class CellWall extends AppCompatActivity {
                 // Start the new activity.
                 startActivity(cellIntent);
             } else if (position == 3) {
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+                status.setBrokeCellWall(true);
+                statusEntityDao.update(status);
+
                 // Tear down that wall!
                 Intent prisonIntent = new Intent(this, Prison.class);
 
                 // Start the new activity.
                 startActivity(prisonIntent);
-            } else {
+            } else if (position == 4) {
+                // Leave through the already broken wall.
+                Intent prisonIntent = new Intent(this, Prison.class);
+
+                // Start the new activity.
+                startActivity(prisonIntent);
+            }
+            else {
                     // panic?
                     TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
                     text.setText("panic?");
@@ -73,14 +82,35 @@ public class CellWall extends AppCompatActivity {
         InventoryEntity inventory = inventoryList.get(0);
         boolean hasPipe = inventory.getPipe();
 
-        if (!hasPipe) {
+        StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+        List<StatusEntity> statusList = statusEntityDao.getAll();
+        StatusEntity status = statusList.get(0);
+        boolean smashedWall = status.getBrokeCellWall();
+
+        if (smashedWall) {
+            // Player already broke the wall.
             RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_wall_option_group);
             RadioButton button = (RadioButton) group.getChildAt(3);
             button.setVisibility(View.GONE);
+
+            RadioButton secondButton = (RadioButton) group.getChildAt(4);
+            secondButton.setVisibility(View.VISIBLE);
+        } else if (!hasPipe) {
+            // Player does not have the pipe and has not broken the wall.
+            RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_wall_option_group);
+            RadioButton button = (RadioButton) group.getChildAt(3);
+            button.setVisibility(View.GONE);
+
+            RadioButton secondButton = (RadioButton) group.getChildAt(4);
+            button.setVisibility(View.GONE);
         } else {
+            // Player has the pipe but has not broken the wall.
             RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_wall_option_group);
             RadioButton button = (RadioButton) group.getChildAt(3);
             button.setVisibility(View.VISIBLE);
+
+            RadioButton secondButton = (RadioButton) group.getChildAt(4);
+            secondButton.setVisibility(View.GONE);
         }
     }
 }

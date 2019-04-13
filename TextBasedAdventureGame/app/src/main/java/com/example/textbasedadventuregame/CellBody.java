@@ -30,39 +30,28 @@ public class CellBody extends AppCompatActivity {
             RadioButton selectedButton = findViewById(checkedButtonId);
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
-                // They chose to examine crack in wall
-                Context context = getApplicationContext();
-                CharSequence text1 = "dead body head description";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                // They chose to examine the body's head.
+                TextView text = (TextView) findViewById(R.id.additional_cell_body_text);
                 text.setText("dead body head description");
             } else if (position == 1) {
-                // They chose to punch wall
-                Context context = getApplicationContext();
-                CharSequence text1 = "dead body torso description";
-                int duration = Toast.LENGTH_SHORT;
+                // They chose to examine the body's torso.
+                TextView text = (TextView) findViewById(R.id.additional_cell_body_text);
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("dead body torso description");
                 InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
                 List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
                 InventoryEntity inventory = inventoryList.get(0);
-                inventory.setShiv(true);
-                inventoryEntityDao.update(inventory);
-            } else if (position == 2) {
-                // They chose to punch wall
-                Context context = getApplicationContext();
-                CharSequence text1 = "dead body legs description";
-                int duration = Toast.LENGTH_SHORT;
+                boolean hasShiv = inventory.getShiv();
 
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                if (hasShiv) {
+                    text.setText("dead body torso description without shiv");
+                } else {
+                    text.setText("dead body torso description with shiv");
+                    inventory.setShiv(true);
+                    inventoryEntityDao.update(inventory);
+                }
+            } else if (position == 2) {
+                // They chose to examine the body's legs.
+                TextView text = (TextView) findViewById(R.id.additional_cell_body_text);
                 text.setText("dead body legs description");
             } else if (position == 3) {
                 // They chose to return to cell
@@ -72,15 +61,9 @@ public class CellBody extends AppCompatActivity {
                 startActivity(cellIntent);
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_cell_body_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 

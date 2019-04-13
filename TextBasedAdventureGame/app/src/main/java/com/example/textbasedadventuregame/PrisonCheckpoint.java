@@ -31,23 +31,11 @@ public class PrisonCheckpoint extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to examine security station
-                Context context = getApplicationContext();
-                CharSequence text1 = "security station desc";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_checkpoint_text);
                 text.setText("security station desc");
             } else if (position == 1) {
                 // They chose to try to open the stairwell door
-                Context context = getApplicationContext();
-                CharSequence text1 = "You try to open the door, but it doesn't budge. A card scanner is flashing red.";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text1, duration);
-                toast.show();
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_checkpoint_text);
                 text.setText("You try to open the door, but it doesn't budge. A card scanner is flashing red.");
             } else if (position == 2) {
                 // They chose to return to the prison
@@ -63,7 +51,7 @@ public class PrisonCheckpoint extends AppCompatActivity {
                 startActivity(stairwellIntent);
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_checkpoint_text);
                 text.setText("panic?");
             }
         }
