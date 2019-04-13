@@ -11,8 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
+
+    public boolean hasId;
 
     public void onNextFoundationEmployeesButtonClick(View view) {
         RadioGroup group = (RadioGroup) findViewById(R.id.foundation_employees_option_group);
@@ -29,10 +33,15 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to go to the armory
-                Intent armoryIntent = new Intent(this, FoundationEmployeeLivingQuartersArmory.class);
+                if (hasId) {
+                    Intent armoryIntent = new Intent(this, FoundationEmployeeLivingQuartersArmory.class);
 
-                // Start the new activity.
-                startActivity(armoryIntent);
+                    // Start the new activity.
+                    startActivity(armoryIntent);
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_quarters_text);
+                    text.setText("The door is locked. An ID scanner to the side of the door is flashing red.");
+                }
             } else if (position == 1) {
                 // They chose to examine Dr. TODO's room
                 Intent room1Intent = new Intent(this, FoundationEmployeeLivingQuartersDr1Room.class);
@@ -81,5 +90,12 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foundation_employee_living_quarters);
+
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
+
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+        InventoryEntity inventory = inventoryList.get(0);
+        this.hasId = inventory.getFoundationEmployeeIdCard();
     }
 }

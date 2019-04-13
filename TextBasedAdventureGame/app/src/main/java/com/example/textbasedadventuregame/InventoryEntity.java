@@ -24,6 +24,18 @@ public class InventoryEntity {
     @ColumnInfo(name = "scalpel")
     public boolean scalpel;
 
+    @ColumnInfo(name = "gun")
+    public boolean gun;
+
+    @ColumnInfo(name = "ammo")
+    public int ammo;
+
+    @ColumnInfo(name = "armor")
+    public boolean armor;
+
+    @ColumnInfo(name = "foundation_employee_id_card")
+    public boolean foundation_employee_id_card;
+
     public boolean getShiv() { return this.shiv; }
 
     public void setShiv(boolean shiv) { this.shiv = shiv; }
@@ -43,5 +55,21 @@ public class InventoryEntity {
     public boolean getScalpel() { return this.scalpel; }
 
     public void setScalpel(boolean scalpel) { this.scalpel = scalpel; }
+
+    public boolean getGun() { return this.gun; }
+
+    public void setGun(boolean gun) { this.gun = gun; }
+
+    public int getAmmo() { return this.ammo; }
+
+    public void setAmmo(int ammo) { this.ammo = ammo; }
+
+    public boolean getArmor() { return this.armor; }
+
+    public void setArmor(boolean armor) { this.armor = armor; }
+
+    public boolean getFoundationEmployeeIdCard() { return this.foundation_employee_id_card; }
+
+    public void setFoundationEmployeeIdCard(boolean foundation_employee_id_card) { this.foundation_employee_id_card = foundation_employee_id_card; }
 
 }
