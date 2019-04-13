@@ -29,10 +29,16 @@ public class CrewQuarters extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to go to the galley
+                Intent galleyIntent = new Intent(this, CrewQuartersGalley.class);
 
+                // Start the new activity.
+                startActivity(galleyIntent);
             } else if (position == 1) {
                 // They chose to go to the crew medbay
+                Intent medbayIntent = new Intent(this, CrewQuartersMedbay.class);
 
+                // Start the new activity.
+                startActivity(medbayIntent);
             } else if (position == 2) {
                 // They chose to examine the gym
                 Context context = getApplicationContext();
@@ -40,7 +46,10 @@ public class CrewQuarters extends AppCompatActivity {
                 text.setText("gym description");
             } else if (position == 3) {
                 // They chose to examine crew member TODO's room
+                Intent crewRoomIntent = new Intent(this, CrewQuartersCrew1Room.class);
 
+                // Start the new activity.
+                startActivity(crewRoomIntent);
             } else if (position == 4) {
                 // They chose to return to go to the stairwell
                 Intent stairIntent = new Intent(this, CrewQuartersStairwell.class);
@@ -52,12 +61,6 @@ public class CrewQuarters extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.additional_crew_quarters_text);
                 text.setText("panic?");
             }
-
-            // Create an Intent to start the next activity
-            //Intent introductionIntent = new Intent(this, Introduction.class);
-
-            // Start the new activity.
-            //startActivity(introductionIntent);
         }
     }
 
