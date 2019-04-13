@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrisonCheckpoint">
+    tools:context=".FoundationEmployeeLivingQuarters">
 
     <RadioGroup
-        android:id="@+id/prison_checkpoint_option_group"
+        android:id="@+id/foundation_employees_option_group"
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -18,22 +18,28 @@
         android:layout_marginBottom="213dp">
 
         <RadioButton
-            android:id="@+id/examine_security_station"
+            android:id="@+id/examine_other_cells"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Examine security station" />
+            android:text="Look at other cells" />
 
         <RadioButton
-            android:id="@+id/open_stairwell_door"
+            android:id="@+id/examine_medbay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Open the stairwell door" />
+            android:text="Go to the medbay" />
 
         <RadioButton
-            android:id="@+id/return_to_prison"
+            android:id="@+id/examine_showers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go back to the cells" />
+            android:text="Examine the showers" />
+
+        <RadioButton
+            android:id="@+id/return_to_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/return_to_cell" />
     </RadioGroup>
 
     <TextView
@@ -47,13 +53,13 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="Description of prison checkpoint"
+        android:text="Description of prison floor"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
-        android:id="@+id/prison_checkpoint_next_button"
-        android:onClick="onNextPrisonCheckpointButtonClick"
+        android:id="@+id/foundation_employees_next_button"
+        android:onClick="onNextFoundationEmployeesButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

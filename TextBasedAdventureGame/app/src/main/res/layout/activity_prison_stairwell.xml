@@ -18,22 +18,22 @@
         android:layout_marginBottom="213dp">
 
         <RadioButton
-            android:id="@+id/examine_crack"
+            android:id="@+id/from_prison_go_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Examine crack in the wall" />
+            android:text="Go up the stairs" />
 
         <RadioButton
-            android:id="@+id/punch_wall"
+            android:id="@+id/from_prison_go_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Punch the wall" />
+            android:text="Go down the stairs" />
 
         <RadioButton
-            android:id="@+id/return_to_cell"
+            android:id="@+id/return_to_prison"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/return_to_cell" />
+            android:text="Enter the prison floor" />
     </RadioGroup>
 
     <TextView
@@ -47,7 +47,7 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="Description of glass cell wall"
+        android:text="Description of the prison stairwell"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 

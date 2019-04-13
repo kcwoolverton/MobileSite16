@@ -11,11 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PrisonStairwell extends AppCompatActivity {
+public class FoundationEmployeeLivingQuartersStairwell extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
     public void onNextCellButtonClick(View view) {
-        RadioGroup group = (RadioGroup) findViewById(R.id.prison_stairwell_option_group);
+        RadioGroup group = (RadioGroup) findViewById(R.id.foundation_employees_stairwell_option_group);
         int checkedButtonId = group.getCheckedRadioButtonId();
         if (checkedButtonId == -1) {
             Context context = getApplicationContext();
@@ -29,18 +29,18 @@ public class PrisonStairwell extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // Go up
-                Intent cellIntent = new Intent(this, PlayerCell.class);
-
-                // Start the new activity.
-                startActivity(cellIntent);
             } else if (position == 1) {
                 // Go down
-            } else if (position == 2) {
-                // Go back to prison
-                Intent cellIntent = new Intent(this, PlayerCell.class);
+                Intent prisonStairsIntent = new Intent(this, PrisonStairwell.class);
 
                 // Start the new activity.
-                startActivity(cellIntent);
+                startActivity(prisonStairsIntent);
+            } else if (position == 2) {
+                // Enter living quarters
+                Intent livingQuartersIntent = new Intent(this, FoundationEmployeeLivingQuarters.class);
+
+                // Start the new activity.
+                startActivity(livingQuartersIntent);
             } else {
                 // panic?
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
@@ -52,6 +52,6 @@ public class PrisonStairwell extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prison_stairwell);
+        setContentView(R.layout.activity_foundation_employee_living_quarters_stairwell);
     }
 }
