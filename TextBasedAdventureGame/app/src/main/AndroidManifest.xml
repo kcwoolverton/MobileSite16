@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CrewQuartersStairwell"></activity>
+        <activity android:name=".CrewQuartersMedbay"></activity>
+        <activity android:name=".CrewQuartersGalley" />
+        <activity android:name=".FoundationEmployeeLivingQuartersLounge" />
+        <activity android:name=".CrewQuartersCrew1Room" />
+        <activity android:name=".FoundationEmployeeLivingQuartersSecurityGuardRoom" />
+        <activity android:name=".FoundationEmployeeLivingQuartersDr3Room" />
+        <activity android:name=".FoundationEmployeeLivingQuartersDr2Room" />
+        <activity android:name=".FoundationEmployeeLivingQuartersDr1Room" />
+        <activity android:name=".FoundationEmployeeLivingQuartersArmory" />
+        <activity android:name=".CrewQuartersStairwell" />
         <activity android:name=".CrewQuarters" />
         <activity android:name=".FoundationEmployeeLivingQuartersStairwell" />
         <activity android:name=".FoundationEmployeeLivingQuarters" />
