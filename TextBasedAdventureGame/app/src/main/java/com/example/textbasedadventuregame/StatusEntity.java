@@ -30,6 +30,12 @@ class StatusEntity {
     @ColumnInfo(name = "fed_josie")
     public boolean fed_josie;
 
+    @ColumnInfo(name = "need_supplies")
+    public boolean need_supplies;
+
+    @ColumnInfo(name = "took_supplies")
+    public boolean took_supplies;
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -57,4 +63,12 @@ class StatusEntity {
     public boolean getFedJosie() { return this.fed_josie; }
 
     public void setFedJosie(boolean fed_josie) { this.fed_josie = fed_josie; }
+
+    public boolean getNeedSupplies() { return this.need_supplies; }
+
+    public void setNeedSupplies(boolean need_supplies) { this.need_supplies = need_supplies; }
+
+    public boolean getTookSupplies() { return this.took_supplies; }
+
+    public void setTookSupplies(boolean took_supplies) { this.took_supplies = took_supplies; }
 }

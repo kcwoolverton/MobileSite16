@@ -39,6 +39,9 @@ public class InventoryEntity {
     @ColumnInfo(name = "cheese")
     public boolean cheese;
 
+    @ColumnInfo(name = "food_supplies")
+    public boolean food_supplies;
+
     public boolean getShiv() { return this.shiv; }
 
     public void setShiv(boolean shiv) { this.shiv = shiv; }
@@ -78,4 +81,8 @@ public class InventoryEntity {
     public boolean getCheese() { return this.cheese; }
 
     public void setCheese(boolean cheese) { this.cheese = cheese; }
+
+    public boolean getFoodSupplies() { return this.food_supplies; }
+
+    public void setFoodSupplies(boolean food_supplies) { this.food_supplies = food_supplies; }
 }

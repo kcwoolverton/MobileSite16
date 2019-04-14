@@ -76,6 +76,8 @@ public class PrisonMedbay extends AppCompatActivity {
                     text.setText("labcoat with id card");
                     inventory.setPrisonFloorIdCard(true);
                     inventoryEntityDao.update(inventory);
+                    status.setTookPrisonIdCard(true);
+                    statusEntityDao.update(status);
                 }
             } else if (position == 4) {
                 // They chose to go through the medical instruments
