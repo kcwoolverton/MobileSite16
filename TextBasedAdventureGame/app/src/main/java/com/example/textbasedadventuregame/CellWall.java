@@ -105,7 +105,7 @@ public class CellWall extends AppCompatActivity {
             button.setVisibility(View.GONE);
 
             RadioButton secondButton = (RadioButton) group.getChildAt(2);
-            button.setVisibility(View.GONE);
+            secondButton.setVisibility(View.GONE);
         } else {
             // Player has the pipe but has not broken the wall.
             RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_wall_option_group);

@@ -97,7 +97,9 @@ public class PrisonMedbay extends AppCompatActivity {
                 } else {
                     text.setText("medical instruments with scalpel");
                     inventory.setScalpel(true);
+                    status.setTookPrisonMedbayScalpel(true);
                     inventoryEntityDao.update(inventory);
+                    statusEntityDao.update(status);
                 }
             } else if (position == 5) {
                 // They chose to return to the cells

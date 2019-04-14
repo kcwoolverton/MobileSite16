@@ -33,7 +33,7 @@ public class PrisonCheckpoint extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to examine security station
-                TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                TextView text = (TextView) findViewById(R.id.additional_prison_checkpoint_text);
                 text.setText("security station desc");
             } else if (position == 1) {
                 // They chose to try to open the stairwell door
@@ -44,7 +44,7 @@ public class PrisonCheckpoint extends AppCompatActivity {
                     // Start the new activity.
                     startActivity(stairwellIntent);
                 } else {
-                    TextView text = (TextView) findViewById(R.id.additional_cell_text);
+                    TextView text = (TextView) findViewById(R.id.additional_prison_checkpoint_text);
                     text.setText("You try to open the door, but it doesn't budge. A card scanner to the side of the door is flashing red.");
                 }
             } else if (position == 2) {
