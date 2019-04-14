@@ -35,7 +35,6 @@ public class CrewQuartersGalley extends AppCompatActivity {
                 text.setText("tables");
             } else if (position == 1) {
                 // They chose to go through the pantry
-
                 StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
                 List<StatusEntity> statusList = statusEntityDao.getAll();
                 StatusEntity status = statusList.get(0);
