@@ -36,6 +36,9 @@ public class InventoryEntity {
     @ColumnInfo(name = "foundation_employee_id_card")
     public boolean foundation_employee_id_card;
 
+    @ColumnInfo(name = "cheese")
+    public boolean cheese;
+
     public boolean getShiv() { return this.shiv; }
 
     public void setShiv(boolean shiv) { this.shiv = shiv; }
@@ -72,4 +75,7 @@ public class InventoryEntity {
 
     public void setFoundationEmployeeIdCard(boolean foundation_employee_id_card) { this.foundation_employee_id_card = foundation_employee_id_card; }
 
+    public boolean getCheese() { return this.cheese; }
+
+    public void setCheese(boolean cheese) { this.cheese = cheese; }
 }

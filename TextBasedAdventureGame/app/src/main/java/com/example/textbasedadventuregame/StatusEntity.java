@@ -24,6 +24,12 @@ class StatusEntity {
     @ColumnInfo(name = "took_prison_id_card")
     public boolean took_prison_id_card;
 
+    @ColumnInfo(name = "took_cheese")
+    public boolean took_cheese;
+
+    @ColumnInfo(name = "fed_josie")
+    public boolean fed_josie;
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -43,4 +49,12 @@ class StatusEntity {
     public boolean getTookPrisonIdCard() { return this.took_prison_id_card; }
 
     public void setTookPrisonIdCard(boolean took_prison_id_card) { this.took_prison_id_card = took_prison_id_card; }
+
+    public boolean getTookCheese() { return this.took_cheese; }
+
+    public void setTookCheese(boolean took_cheese) { this.took_prison_id_card = took_cheese; }
+
+    public boolean getFedJosie() { return this.fed_josie; }
+
+    public void setFedJosie(boolean fed_josie) { this.fed_josie = fed_josie; }
 }
