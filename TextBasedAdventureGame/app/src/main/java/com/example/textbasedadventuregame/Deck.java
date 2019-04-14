@@ -95,7 +95,19 @@ public class Deck extends AppCompatActivity {
                 searchForDirector.setVisibility(View.GONE);
             } else if (position == 8) {
                 // They chose to go upstairs
-                // TODO
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                StatusEntity status = statusEntityDao.getAll().get(0);
+                boolean knifedDirector = status.getKnifedSiteDirector();
+
+                if (knifedDirector) {
+                    Intent stairIntent = new Intent(this, TopFloor.class);
+
+                    // Start the new activity.
+                    startActivity(stairIntent);
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_deck_text);
+                    text.setText("A biometric scanner blocks the door up.");
+                }
             } else if (position == 9) {
                 // They chose to go downstairs
                 Intent stairIntent = new Intent(this, CrewQuartersStairwell.class);
@@ -127,7 +139,7 @@ public class Deck extends AppCompatActivity {
         boolean hasGun = inventory.getGun();
         boolean hasShiv = inventory.getShiv();
 
-        RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_wall_option_group);
+        RadioGroup group = (RadioGroup) findViewById(R.id.deck_option_group);
         RadioButton useGun = (RadioButton) group.getChildAt(3);
         RadioButton useShiv = (RadioButton) group.getChildAt(4);
         RadioButton searchForDirector = (RadioButton) group.getChildAt(6);
