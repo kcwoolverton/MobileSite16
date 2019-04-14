@@ -38,11 +38,11 @@ public class CellWall extends AppCompatActivity {
                 TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
                 text.setText("punched wall");
             } else if (position == 2) {
-                // They chose to return to cell
-                Intent cellIntent = new Intent(this, PlayerCell.class);
+                // Leave through the already broken wall.
+                Intent prisonIntent = new Intent(this, Prison.class);
 
                 // Start the new activity.
-                startActivity(cellIntent);
+                startActivity(prisonIntent);
             } else if (position == 3) {
                 StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
                 List<StatusEntity> statusList = statusEntityDao.getAll();
@@ -51,16 +51,19 @@ public class CellWall extends AppCompatActivity {
                 statusEntityDao.update(status);
 
                 // Tear down that wall!
-                Intent prisonIntent = new Intent(this, Prison.class);
+                TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
+                text.setText("You lift the pipe into the air and bring it down on the crack that your roommate created. The crack grows in size. You hit it again, and the glass shatters, leaving a gap large enough for you to fit through.");
+                RadioButton button = (RadioButton) group.getChildAt(2);
+                button.setVisibility(View.VISIBLE);
+                RadioButton originalButton = (RadioButton) group.getChildAt(3);
+                originalButton.setVisibility(View.GONE);
 
-                // Start the new activity.
-                startActivity(prisonIntent);
             } else if (position == 4) {
-                // Leave through the already broken wall.
-                Intent prisonIntent = new Intent(this, Prison.class);
+                // They chose to return to cell
+                Intent cellIntent = new Intent(this, PlayerCell.class);
 
                 // Start the new activity.
-                startActivity(prisonIntent);
+                startActivity(cellIntent);
             }
             else {
                     // panic?
@@ -93,7 +96,7 @@ public class CellWall extends AppCompatActivity {
             RadioButton button = (RadioButton) group.getChildAt(3);
             button.setVisibility(View.GONE);
 
-            RadioButton secondButton = (RadioButton) group.getChildAt(4);
+            RadioButton secondButton = (RadioButton) group.getChildAt(2);
             secondButton.setVisibility(View.VISIBLE);
         } else if (!hasPipe) {
             // Player does not have the pipe and has not broken the wall.
@@ -101,7 +104,7 @@ public class CellWall extends AppCompatActivity {
             RadioButton button = (RadioButton) group.getChildAt(3);
             button.setVisibility(View.GONE);
 
-            RadioButton secondButton = (RadioButton) group.getChildAt(4);
+            RadioButton secondButton = (RadioButton) group.getChildAt(2);
             button.setVisibility(View.GONE);
         } else {
             // Player has the pipe but has not broken the wall.
@@ -109,7 +112,7 @@ public class CellWall extends AppCompatActivity {
             RadioButton button = (RadioButton) group.getChildAt(3);
             button.setVisibility(View.VISIBLE);
 
-            RadioButton secondButton = (RadioButton) group.getChildAt(4);
+            RadioButton secondButton = (RadioButton) group.getChildAt(2);
             secondButton.setVisibility(View.GONE);
         }
     }

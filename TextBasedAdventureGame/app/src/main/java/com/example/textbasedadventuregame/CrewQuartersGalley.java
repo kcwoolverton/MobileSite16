@@ -69,7 +69,7 @@ public class CrewQuartersGalley extends AppCompatActivity {
                 List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
                 InventoryEntity inventory = inventoryList.get(0);
 
-                if (!tookCheese) {
+                if (tookCheese) {
                     TextView text = (TextView) findViewById(R.id.additional_crew_quarters_galley_text);
                     text.setText("fridge without cheese");
                 } else {

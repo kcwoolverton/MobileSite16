@@ -30,10 +30,10 @@
             android:text="Punch the wall" />
 
         <RadioButton
-            android:id="@+id/return_to_cell"
+            android:id="@+id/leave_through_broken_wall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/return_to_cell" />
+            android:text="Leave through broken wall" />
 
         <RadioButton
             android:id="@+id/smash_wall_with_pipe"
@@ -42,10 +42,10 @@
             android:text="Smash wall with pipe" />
 
         <RadioButton
-            android:id="@+id/leave_through_broken_wall"
+            android:id="@+id/return_to_cell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Leave through broken wall" />
+            android:text="@string/return_to_cell" />
     </RadioGroup>
 
     <TextView

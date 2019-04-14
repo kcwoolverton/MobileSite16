@@ -89,6 +89,11 @@ public class FoundationEmployeeLivingQuartersDr2Room extends AppCompatActivity {
                 StatusEntity status = statusList.get(0);
                 status.setFedJosie(true);
                 statusEntityDao.update(status);
+                hasFedJosie = true;
+
+                // Player already fed Josie
+                RadioButton button = (RadioButton) group.getChildAt(6);
+                button.setVisibility(View.GONE);
             } else if (position == 7) {
                 // They chose to return to the employee quarters
                 Intent quartersIntent = new Intent(this, FoundationEmployeeLivingQuarters.class);
