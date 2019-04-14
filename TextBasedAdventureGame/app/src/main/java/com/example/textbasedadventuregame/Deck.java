@@ -53,6 +53,8 @@ public class Deck extends AppCompatActivity {
                 if (ammo > 0) {
                     TextView text = (TextView) findViewById(R.id.additional_deck_text);
                     text.setText("shoot someone description");
+                    inventory.setAmmo(ammo - 1);
+                    inventoryEntityDao.update(inventory);
                 } else {
                     TextView text = (TextView) findViewById(R.id.additional_deck_text);
                     text.setText("The gun clicks when you pull the trigger. You must be out of ammo.");
@@ -79,6 +81,13 @@ public class Deck extends AppCompatActivity {
                 // We shouldn't be able to do this again
                 RadioButton searchForDirector = (RadioButton) group.getChildAt(6);
                 searchForDirector.setVisibility(View.GONE);
+
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                InventoryEntity inventory = inventoryEntityDao.getAll().get(0);
+                if (inventory.getObsidianKnife()) {
+                    RadioButton knifeDirector = (RadioButton) group.getChildAt(7);
+                    knifeDirector.setVisibility(View.VISIBLE);
+                }
             } else if (position == 7) {
                 // They chose to use the knife on the site director
                 // They have now knifed the director
@@ -91,8 +100,8 @@ public class Deck extends AppCompatActivity {
                 text.setText("knife site director");
 
                 // We shouldn't be able to do this again
-                RadioButton searchForDirector = (RadioButton) group.getChildAt(7);
-                searchForDirector.setVisibility(View.GONE);
+                RadioButton knifeDirector = (RadioButton) group.getChildAt(7);
+                knifeDirector.setVisibility(View.GONE);
             } else if (position == 8) {
                 // They chose to go upstairs
                 StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();

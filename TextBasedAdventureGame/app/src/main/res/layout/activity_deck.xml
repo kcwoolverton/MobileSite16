@@ -18,34 +18,64 @@
         android:layout_marginBottom="213dp">
 
         <RadioButton
-            android:id="@+id/galley"
+            android:id="@+id/look_at_crowd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the galley" />
+            android:text="Look out at the crowd" />
 
         <RadioButton
-            android:id="@+id/examine_crew_medbay"
+            android:id="@+id/look_at_ocean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the crew's medbay" />
+            android:text="Look at the ocean" />
 
         <RadioButton
-            android:id="@+id/go_to_gym"
+            android:id="@+id/jump_into_ocean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Examine the crew's gym" />
+            android:text="Jump off the boat" />
 
         <RadioButton
-            android:id="@+id/go_to_crew_room"
+            android:id="@+id/pew_pew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Look at the crew's rooms" />
+            android:text="Shoot someone in the crowd with the gun" />
 
         <RadioButton
-            android:id="@+id/go_to_crew_stairs"
+            android:id="@+id/stab_stab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the stairs" />
+            android:text="Stab someone in the crowd with the shiv" />
+
+        <RadioButton
+            android:id="@+id/talk_to_someone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Talk to someone in the crowd" />
+
+        <RadioButton
+            android:id="@+id/search_crowd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search the crowd for the Site Director" />
+
+        <RadioButton
+            android:id="@+id/knife_director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use the obsidian knife on the Site Director" />
+
+        <RadioButton
+            android:id="@+id/go_upstairs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go up the stairs" />
+
+        <RadioButton
+            android:id="@+id/go_downstairs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go down the stairs" />
     </RadioGroup>
 
     <TextView
