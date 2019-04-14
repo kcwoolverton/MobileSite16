@@ -52,6 +52,11 @@ public class CrewQuartersGalley extends AppCompatActivity {
                     } else {
                         TextView text = (TextView) findViewById(R.id.additional_crew_quarters_galley_text);
                         text.setText("pantry description, you take some of the supplies");
+
+                        inventory.setFoodSupplies(true);
+                        status.setTookSupplies(true);
+                        inventoryEntityDao.update(inventory);
+                        statusEntityDao.update(status);
                     }
                 } else {
                     TextView text = (TextView) findViewById(R.id.additional_crew_quarters_galley_text);

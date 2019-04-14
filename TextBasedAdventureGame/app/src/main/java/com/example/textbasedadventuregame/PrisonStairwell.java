@@ -35,6 +35,7 @@ public class PrisonStairwell extends AppCompatActivity {
                 startActivity(livingQuartersIntent);
             } else if (position == 1) {
                 // Go down
+                // TODO
             } else if (position == 2) {
                 // Go back to prison checkpoint
                 Intent prisonIntent = new Intent(this, PrisonCheckpoint.class);

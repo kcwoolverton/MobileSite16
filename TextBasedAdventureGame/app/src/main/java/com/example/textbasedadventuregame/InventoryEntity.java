@@ -42,6 +42,9 @@ public class InventoryEntity {
     @ColumnInfo(name = "food_supplies")
     public boolean food_supplies;
 
+    @ColumnInfo(name = "obsidian_knife")
+    public boolean obsidian_knife;
+
     public boolean getShiv() { return this.shiv; }
 
     public void setShiv(boolean shiv) { this.shiv = shiv; }
@@ -85,4 +88,8 @@ public class InventoryEntity {
     public boolean getFoodSupplies() { return this.food_supplies; }
 
     public void setFoodSupplies(boolean food_supplies) { this.food_supplies = food_supplies; }
+
+    public boolean getObsidianKnife() { return this.obsidian_knife; }
+
+    public void setObsidianKnife(boolean obsidian_knife) { this.obsidian_knife = obsidian_knife; }
 }

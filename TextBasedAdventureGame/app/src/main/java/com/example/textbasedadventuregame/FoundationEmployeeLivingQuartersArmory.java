@@ -31,27 +31,45 @@ public class FoundationEmployeeLivingQuartersArmory extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to search through the weapons
-                TextView text = (TextView) findViewById(R.id.additional_quarters_armory_text);
-                text.setText("weapons");
-
-                // Give them a gun and some ammo
                 InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
                 List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
                 InventoryEntity inventory = inventoryList.get(0);
-                inventory.setGun(true);
-                inventory.setAmmo(4);
-                inventoryEntityDao.update(inventory);
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+
+                if (!status.getTookGun()) {
+                    inventory.setGun(true);
+                    inventory.setAmmo(4);
+                    inventoryEntityDao.update(inventory);
+                    status.setTookGun(true);
+                    statusEntityDao.update(status);
+                    TextView text = (TextView) findViewById(R.id.additional_quarters_armory_text);
+                    text.setText("You take the one gun remaining on the weapons rack.");
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_quarters_armory_text);
+                    text.setText("There are no more weapons. The rack is empty.");
+                }
             } else if (position == 1) {
                 // They chose to go through the armor
-                TextView text = (TextView) findViewById(R.id.additional_quarters_armory_text);
-                text.setText("armor");
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
 
-                // Give them some armor
-                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
-                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
-                InventoryEntity inventory = inventoryList.get(0);
-                inventory.setArmor(true);
-                inventoryEntityDao.update(inventory);
+                if (!status.getTookArmor()) {
+                    TextView text = (TextView) findViewById(R.id.additional_quarters_armory_text);
+                    text.setText("armor");
+
+                    // Give them some armor
+                    InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                    List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                    InventoryEntity inventory = inventoryList.get(0);
+                    inventory.setArmor(true);
+                    inventoryEntityDao.update(inventory);
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_quarters_armory_text);
+                    text.setText("You already have some armor.");
+                }
             } else if (position == 2) {
                 // They chose to go through the desk
                 TextView text = (TextView) findViewById(R.id.additional_quarters_armory_text);

@@ -36,6 +36,24 @@ class StatusEntity {
     @ColumnInfo(name = "took_supplies")
     public boolean took_supplies;
 
+    @ColumnInfo(name = "death_by_ocean")
+    public boolean death_by_ocean;
+
+    @ColumnInfo(name = "know_site_director")
+    public boolean know_site_director;
+
+    @ColumnInfo(name = "found_site_director")
+    public boolean found_site_director;
+
+    @ColumnInfo(name = "knifed_site_director")
+    public boolean knifed_site_director;
+
+    @ColumnInfo(name = "took_gun")
+    public boolean took_gun;
+
+    @ColumnInfo(name = "armor")
+    public boolean took_armor;
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -71,4 +89,30 @@ class StatusEntity {
     public boolean getTookSupplies() { return this.took_supplies; }
 
     public void setTookSupplies(boolean took_supplies) { this.took_supplies = took_supplies; }
+
+    public boolean getDeathByOcean() { return this.death_by_ocean; }
+
+    public void setDeathByOcean(boolean death_by_ocean) { this.death_by_ocean = death_by_ocean; }
+
+    public boolean getKnowSiteDirector() { return this.know_site_director; }
+
+    public void setKnowSiteDirector(boolean know_site_director) { this.know_site_director = know_site_director; }
+
+    public boolean getFoundSiteDirector() { return this.found_site_director; }
+
+    public void setFoundSiteDirector(boolean found_site_director) { this.found_site_director = found_site_director; }
+
+    public boolean getKnifedSiteDirector() { return this.knifed_site_director; }
+
+    public void setKnifedSiteDirector(boolean knifed_site_director) { this.knifed_site_director = knifed_site_director; }
+
+    public boolean getTookGun() { return this.took_gun; }
+
+    public void setTookGun(boolean took_gun) { this.took_gun = took_gun; }
+
+    public boolean getTookArmor() { return this.took_armor; }
+
+    public void setTookArmor(boolean took_armor) { this.took_armor = took_armor; }
+
+
 }

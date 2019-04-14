@@ -29,6 +29,10 @@ public class CrewQuartersStairwell extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // Go up
+                Intent deckIntent = new Intent(this, Deck.class);
+
+                // Start the new activity.
+                startActivity(deckIntent);
             } else if (position == 1) {
                 // Go down
                 Intent foundationStairsIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
