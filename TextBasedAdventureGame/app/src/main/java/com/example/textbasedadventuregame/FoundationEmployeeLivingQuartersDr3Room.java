@@ -41,7 +41,7 @@ public class FoundationEmployeeLivingQuartersDr3Room extends AppCompatActivity {
                 // They chose to go through the desk
                 TextView text = (TextView) findViewById(R.id.additional_quarters_dr3_text);
                 text.setText("desk");
-            } else if (position == 4) {
+            } else if (position == 3) {
                 // They chose to return to the employee quarters
                 Intent quartersIntent = new Intent(this, FoundationEmployeeLivingQuarters.class);
 
