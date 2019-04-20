@@ -51,8 +51,23 @@ class StatusEntity {
     @ColumnInfo(name = "took_gun")
     public boolean took_gun;
 
-    @ColumnInfo(name = "armor")
+    @ColumnInfo(name = "took_armor")
     public boolean took_armor;
+
+    @ColumnInfo(name = "is_site_director")
+    public boolean is_site_director;
+
+    @ColumnInfo(name = "chose_a_side")
+    public boolean chose_a_side;
+
+    @ColumnInfo(name = "sided_with_foundation")
+    public boolean sided_with_foundation;
+
+    @ColumnInfo(name = "sided_with_church")
+    public boolean sided_with_church;
+
+    @ColumnInfo(name = "sided_with_nobody")
+    public boolean sided_with_nobody;
 
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
@@ -114,5 +129,23 @@ class StatusEntity {
 
     public void setTookArmor(boolean took_armor) { this.took_armor = took_armor; }
 
+    public boolean getIsSiteDirector() { return this.is_site_director; }
 
+    public void setIsSiteDirector(boolean is_site_director) { this.is_site_director = is_site_director; }
+
+    public boolean getChoseASide() { return this.chose_a_side; }
+
+    public void setChoseASide(boolean chose_a_side) { this.chose_a_side = chose_a_side; }
+
+    public boolean getSidedWithFoundation() { return this.sided_with_foundation; }
+
+    public void setSidedWithFoundation(boolean sided_with_foundation) { this.sided_with_foundation = sided_with_foundation; }
+
+    public boolean getSidedWithChurch() { return this.sided_with_church; }
+
+    public void setSidedWithChurch(boolean sided_with_church) { this.sided_with_church = sided_with_church; }
+
+    public boolean getSidedWithNobody() { return this.sided_with_nobody; }
+
+    public void setSidedWithNobody(boolean sided_with_nobody) { this.sided_with_nobody = sided_with_nobody; }
 }

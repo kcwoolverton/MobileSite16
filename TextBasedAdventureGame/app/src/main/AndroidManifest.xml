@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TopFloorHelm"></activity>
+        <activity android:name=".CaptainsComputer"></activity>
+        <activity android:name=".TopFloorHelm" />
         <activity android:name=".TopFloorCaptainQuarters" />
         <activity android:name=".TopFloorCommRoom" />
         <activity android:name=".TopFloor" />
