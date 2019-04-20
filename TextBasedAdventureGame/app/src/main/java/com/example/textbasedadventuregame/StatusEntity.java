@@ -54,6 +54,9 @@ class StatusEntity {
     @ColumnInfo(name = "armor")
     public boolean took_armor;
 
+    @ColumnInfo(name = "knows_bunny")
+    public boolean knows_bunny;
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -113,6 +116,10 @@ class StatusEntity {
     public boolean getTookArmor() { return this.took_armor; }
 
     public void setTookArmor(boolean took_armor) { this.took_armor = took_armor; }
+
+    public boolean getKnowsBunny() { return this.knows_bunny; }
+
+    public void setKnowsBunny(boolean knows_bunny) { this.knows_bunny = knows_bunny; }
 
 
 }
