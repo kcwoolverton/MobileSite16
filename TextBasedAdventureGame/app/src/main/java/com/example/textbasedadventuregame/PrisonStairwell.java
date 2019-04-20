@@ -11,8 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class PrisonStairwell extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
+
+    public boolean hasId;
 
     public void onNextCellButtonClick(View view) {
         RadioGroup group = (RadioGroup) findViewById(R.id.prison_stairwell_option_group);
@@ -35,7 +39,15 @@ public class PrisonStairwell extends AppCompatActivity {
                 startActivity(livingQuartersIntent);
             } else if (position == 1) {
                 // Go down
-                // TODO
+                if (hasId) {
+                    Intent scpIntent = new Intent(this, ScpStairwell.class);
+
+                    // Start the new activity.
+                    startActivity(scpIntent);
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_prison_checkpoint_text);
+                    text.setText("The door reads \"SCP Containment: Authorized Personnel Only\" in large red letters. You try to open it, but it doesn't budge. A card scanner to the side of the door is flashing red.");
+                }
             } else if (position == 2) {
                 // Go back to prison checkpoint
                 Intent prisonIntent = new Intent(this, PrisonCheckpoint.class);
@@ -54,5 +66,11 @@ public class PrisonStairwell extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prison_stairwell);
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
+
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+        InventoryEntity inventory = inventoryList.get(0);
+        this.hasId = inventory.getFoundationEmployeeIdCard();
     }
 }

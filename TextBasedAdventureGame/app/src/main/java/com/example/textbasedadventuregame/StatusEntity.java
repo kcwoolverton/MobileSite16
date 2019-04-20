@@ -69,6 +69,9 @@ class StatusEntity {
     @ColumnInfo(name = "sided_with_nobody")
     public boolean sided_with_nobody;
 
+    @ColumnInfo(name = "knows_bunny")
+    public boolean knows_bunny;
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -146,6 +149,10 @@ class StatusEntity {
     public void setSidedWithChurch(boolean sided_with_church) { this.sided_with_church = sided_with_church; }
 
     public boolean getSidedWithNobody() { return this.sided_with_nobody; }
+
+    public boolean getKnowsBunny() { return this.knows_bunny; }
+
+    public void setKnowsBunny(boolean knows_bunny) { this.knows_bunny = knows_bunny; }
 
     public void setSidedWithNobody(boolean sided_with_nobody) { this.sided_with_nobody = sided_with_nobody; }
 }

@@ -11,11 +11,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FoundationEmployeeLivingQuartersDr3Room extends AppCompatActivity {
+import java.util.List;
+
+public class ScpBiographyPenRoom extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
-    public void onNextFoundationEmployeesDr3ButtonClick(View view) {
-        RadioGroup group = (RadioGroup) findViewById(R.id.foundation_employees_dr3_option_group);
+    public void onNextScpBiographyPenButtonClick(View view) {
+        RadioGroup group = (RadioGroup) findViewById(R.id.scp_biography_pen_option_group);
         int checkedButtonId = group.getCheckedRadioButtonId();
         if (checkedButtonId == -1) {
             Context context = getApplicationContext();
@@ -28,26 +30,22 @@ public class FoundationEmployeeLivingQuartersDr3Room extends AppCompatActivity {
             RadioButton selectedButton = findViewById(checkedButtonId);
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
-                // They chose to search through the closet
-                TextView text = (TextView) findViewById(R.id.additional_quarters_dr3_text);
-                text.setText("closet");
+                // They chose to examine the pen
+                TextView text = (TextView) findViewById(R.id.additional_scp_biography_pen_text);
+                text.setText("pen description");
             } else if (position == 1) {
-                // They chose to go through the bathroom
-                TextView text = (TextView) findViewById(R.id.additional_quarters_dr3_text);
-                text.setText("bathroom with tothbrush");
+                // They chose to pick up the pen
+                TextView text = (TextView) findViewById(R.id.additional_scp_biography_pen_text);
+                text.setText("background, but again lol");
             } else if (position == 2) {
-                // They chose to go through the desk
-                TextView text = (TextView) findViewById(R.id.additional_quarters_dr3_text);
-                text.setText("desk");
-            } else if (position == 3) {
-                // They chose to return to the employee quarters
-                Intent quartersIntent = new Intent(this, FoundationEmployeeLivingQuarters.class);
+                // They chose to return to the scp containment floor
+                Intent quartersIntent = new Intent(this, Scp.class);
 
                 // Start the new activity.
                 startActivity(quartersIntent);
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_quarters_dr3_text);
+                TextView text = (TextView) findViewById(R.id.additional_scp_biography_pen_text);
                 text.setText("panic?");
             }
         }
@@ -56,7 +54,7 @@ public class FoundationEmployeeLivingQuartersDr3Room extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foundation_employee_living_quarters_dr3_room);
+        setContentView(R.layout.activity_scp_biography_pen_room);
         DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
     }
 }

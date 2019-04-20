@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CaptainsComputer"></activity>
+        <activity android:name=".ScpCassieRoom"></activity>
+        <activity android:name=".ScpOfficeSuppliesManRoom" />
+        <activity android:name=".ScpBunnyRoom" />
+        <activity android:name=".ScpHandRoom" />
+        <activity android:name=".ScpDreamJournalRoom" />
+        <activity android:name=".ScpNostalgicTissueBoxRoom" />
+        <activity android:name=".ScpBiographyPenRoom" />
+        <activity android:name=".ScpObsidianKnifeRoom" />
+        <activity android:name=".ScpLittleMisterRoom" />
+        <activity android:name=".Scp" />
+        <activity android:name=".ScpStairwell" />
         <activity android:name=".TopFloorHelm" />
         <activity android:name=".TopFloorCaptainQuarters" />
         <activity android:name=".TopFloorCommRoom" />
