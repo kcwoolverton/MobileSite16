@@ -11,6 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class TopFloorCaptainQuarters extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
@@ -35,10 +37,14 @@ public class TopFloorCaptainQuarters extends AppCompatActivity {
                 startActivity(captainsComputerIntent);
             } else if (position == 1) {
                 // They chose to take the escape boat.
-                Intent cellWallIntent = new Intent(this, CellWall.class);
+                InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+                List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+                InventoryEntity inventory = inventoryList.get(0);
+                inventory.setEscapeBoat(true);
 
-                // Start the new activity.
-                startActivity(cellWallIntent);
+                RadioButton button = (RadioButton) group.getChildAt(1);
+                button.setVisibility(View.GONE);
+
             } else if (position == 2) {
                 // They chose to return to the top floor.
                 Intent topFloorIntent = new Intent(this, TopFloor.class);
@@ -57,5 +63,25 @@ public class TopFloorCaptainQuarters extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_floor_captain_quarters);
+
+        StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+        List<StatusEntity> statusList = statusEntityDao.getAll();
+        StatusEntity status = statusList.get(0);
+        boolean knowsAboutEscapeBoat = status.getKnowsAboutEscapeBoat();
+
+        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
+        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
+        InventoryEntity inventory = inventoryList.get(0);
+        boolean hasEscapeBoat = inventory.getEscapeBoat();
+
+        if (!knowsAboutEscapeBoat || hasEscapeBoat) {
+            RadioGroup group = (RadioGroup) findViewById(R.id.top_floor_captain_quarters);
+            RadioButton button = (RadioButton) group.getChildAt(1);
+            button.setVisibility(View.GONE);
+        } else {
+            RadioGroup group = (RadioGroup) findViewById(R.id.top_floor_captain_quarters);
+            RadioButton button = (RadioButton) group.getChildAt(1);
+            button.setVisibility(View.VISIBLE);
+        }
     }
 }

@@ -45,6 +45,9 @@ public class InventoryEntity {
     @ColumnInfo(name = "obsidian_knife")
     public boolean obsidian_knife;
 
+    @ColumnInfo(name = "escape_boat")
+    public boolean escape_boat;
+
     public boolean getShiv() { return this.shiv; }
 
     public void setShiv(boolean shiv) { this.shiv = shiv; }
@@ -92,4 +95,8 @@ public class InventoryEntity {
     public boolean getObsidianKnife() { return this.obsidian_knife; }
 
     public void setObsidianKnife(boolean obsidian_knife) { this.obsidian_knife = obsidian_knife; }
+
+    public boolean getEscapeBoat() { return this.escape_boat; }
+
+    public void setEscapeBoat(boolean escape_boat) { this.escape_boat = escape_boat; }
 }
