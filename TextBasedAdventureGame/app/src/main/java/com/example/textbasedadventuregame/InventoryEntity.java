@@ -45,13 +45,11 @@ public class InventoryEntity {
     @ColumnInfo(name = "obsidian_knife")
     public boolean obsidian_knife;
 
-<<<<<<< HEAD
     @ColumnInfo(name = "tissue_box")
     public boolean tissue_box;
-=======
+
     @ColumnInfo(name = "escape_boat")
     public boolean escape_boat;
->>>>>>> 15e9cdabd56e18835bcacd0e1a42dd48638bf02f
 
     public boolean getShiv() { return this.shiv; }
 
