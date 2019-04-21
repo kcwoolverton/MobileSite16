@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScpCassieRoom">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RadioGroup
+        android:id="@+id/scp_cassie_option_group"
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="213dp">
+
+        <RadioButton
+            android:id="@+id/search_closet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search through the closet" />
+
+        <RadioButton
+            android:id="@+id/go_through_bathroom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search the bathroom" />
+
+        <RadioButton
+            android:id="@+id/go_through_desk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go through the desk" />
+
+        <RadioButton
+            android:id="@+id/look_at_posters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Look at the posters on the wall" />
+
+        <RadioButton
+            android:id="@+id/return_to_scp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go back to the SCP containment floor" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="347dp"
+        android:layout_height="202dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="500dp"
+        android:text="Description of cassie room"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <Button
+        android:id="@+id/scp_cassie_next_button"
+        android:onClick="onNextScpCassieButtonClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="154dp"
+        android:layout_marginRight="154dp"
+        android:layout_marginBottom="149dp"
+        android:text="Next" />
+
+    <TextView
+        android:id="@+id/additional_scp_cassie_text"
+        android:layout_width="349dp"
+        android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginBottom="390dp" />
+
+</RelativeLayout>

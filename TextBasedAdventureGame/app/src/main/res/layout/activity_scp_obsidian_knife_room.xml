@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScpObsidianKnifeRoom">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RadioGroup
+        android:id="@+id/scp_obsidian_knife_option_group"
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="213dp">
+
+        <RadioButton
+            android:id="@+id/examine_obsidian_knife"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Look at the tissue box" />
+
+        <RadioButton
+            android:id="@+id/read_obsidian_knife_explanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use the tissue box" />
+
+        <RadioButton
+            android:id="@+id/take_obsidian_knife"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take the tissue box" />
+
+        <RadioButton
+            android:id="@+id/return_to_scp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go back to the SCP containment floor" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="347dp"
+        android:layout_height="202dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="500dp"
+        android:text="Description of obsidian knife room"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <Button
+        android:id="@+id/scp_obsidian_knife_next_button"
+        android:onClick="onNextScpObsidianKnifeButtonClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="154dp"
+        android:layout_marginRight="154dp"
+        android:layout_marginBottom="149dp"
+        android:text="Next" />
+
+    <TextView
+        android:id="@+id/additional_scp_obsidian_knife_text"
+        android:layout_width="349dp"
+        android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginBottom="390dp" />
+
+</RelativeLayout>

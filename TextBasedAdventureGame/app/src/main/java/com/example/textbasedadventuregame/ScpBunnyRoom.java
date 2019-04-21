@@ -46,6 +46,7 @@ public class ScpBunnyRoom extends AppCompatActivity {
                 List<StatusEntity> statusList = statusEntityDao.getAll();
                 StatusEntity status = statusList.get(0);
                 status.setKnowsBunny(true);
+                statusEntityDao.update(status);
 
                 // Player now knows about the bunny
                 RadioButton button = (RadioButton) group.getChildAt(3);
@@ -59,7 +60,7 @@ public class ScpBunnyRoom extends AppCompatActivity {
                     TextView text = (TextView) findViewById(R.id.additional_scp_bunny_text);
                     text.setText("bunny manifests an artwork");
                 }
-            } else if (position == 2) {
+            } else if (position == 4) {
                 // They chose to return to the scp containment floor
                 Intent quartersIntent = new Intent(this, Scp.class);
 
