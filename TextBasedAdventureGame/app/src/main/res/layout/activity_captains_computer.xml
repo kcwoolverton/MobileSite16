@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TopFloorCaptainQuarters">
+    tools:context=".CaptainsComputer">
 
     <RadioGroup
-        android:id="@+id/top_floor_captain_quarters"
+        android:id="@+id/captains_computer_options_group"
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -18,22 +18,28 @@
         android:layout_marginBottom="213dp">
 
         <RadioButton
-            android:id="@+id/examine_computer"
+            android:id="@+id/aid_foundaion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/examine_toilet" />
+            android:text="@string/examine_sink_mirror" />
 
         <RadioButton
-            android:id="@+id/take_lifeboat"
+            android:id="@+id/aid_church_of_the_broken_god"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/examine_glass_wall" />
+            android:text="@string/turn_on_faucet" />
 
         <RadioButton
-            android:id="@+id/return_to_top_floor"
+            android:id="@+id/leave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/examine_sink" />
+            android:text="@string/take_pipe" />
+
+        <RadioButton
+            android:id="@+id/return_to_captains_quarters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/return_to_cell" />
     </RadioGroup>
 
     <TextView
@@ -47,13 +53,13 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="@string/cell_intro_description"
+        android:text="Information about the two sides at play."
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/intro_cell_next_button"
-        android:onClick="onNextCaptainQuartersButtonClick"
+        android:onClick="onNextCaptainsComputerButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -65,7 +71,7 @@
         android:text="Next" />
 
     <TextView
-        android:id="@+id/additional_top_floor_captain_quarters_text"
+        android:id="@+id/additional_captains_computer_text"
         android:layout_width="349dp"
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"

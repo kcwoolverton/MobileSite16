@@ -11,18 +11,27 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class TopFloor extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
     public void onNextTopFloorButtonClick(View view) {
+        StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+        List<StatusEntity> statusList = statusEntityDao.getAll();
+        StatusEntity status = statusList.get(0);
+        boolean isSiteDirector = status.getIsSiteDirector();
+
+        TextView text = (TextView) findViewById(R.id.additional_top_floor_text);
+
         RadioGroup group = (RadioGroup) findViewById(R.id.top_floor_option_group);
         int checkedButtonId = group.getCheckedRadioButtonId();
         if (checkedButtonId == -1) {
             Context context = getApplicationContext();
-            CharSequence text = "What would you like to do?";
+            CharSequence warningMessage = "What would you like to do?";
             int duration = Toast.LENGTH_SHORT;
 
-            Toast toast = Toast.makeText(context, text, duration);
+            Toast toast = Toast.makeText(context, warningMessage, duration);
             toast.show();
         } else {
             RadioButton selectedButton = findViewById(checkedButtonId);
@@ -34,26 +43,40 @@ public class TopFloor extends AppCompatActivity {
                 // Start the new activity.
                 startActivity(deckIntent);
             } else if (position == 1) {
-                // Enter the captain's quarters
-                Intent captainIntent = new Intent(this, TopFloorCaptainQuarters.class);
 
-                // Start the new activity.
-                startActivity(captainIntent);
+                if (isSiteDirector) {
+                    // Enter the captain's quarters
+                    Intent captainIntent = new Intent(this, TopFloorCaptainQuarters.class);
+
+                    // Start the new activity.
+                    startActivity(captainIntent);
+                } else {
+                    text.setText("The biometric scanner flashes red when you try to use it.");
+                }
             } else if (position == 2) {
-                // Enter the communication's room
-                Intent commIntent = new Intent(this, TopFloorCommRoom.class);
 
-                // Start the new activity.
-                startActivity(commIntent);
+                if (isSiteDirector) {
+                    // Enter the communication's room
+                    Intent commIntent = new Intent(this, TopFloorCommRoom.class);
+
+                    // Start the new activity.
+                    startActivity(commIntent);
+                } else {
+                    text.setText("The biometric scanner flashes red when you try to use it.");
+                }
             } else if (position == 3) {
-                // Enter the helm
-                Intent helmIntent = new Intent(this, TopFloorHelm.class);
 
-                // Start the new activity.
-                startActivity(helmIntent);
+                if (isSiteDirector) {
+                    // Enter the helm
+                    Intent helmIntent = new Intent(this, TopFloorHelm.class);
+
+                    // Start the new activity.
+                    startActivity(helmIntent);
+                } else {
+                    text.setText("The biometric scanner flashes red when you try to use it.");
+                }
             } else {
                 // panic?
-                TextView text = (TextView) findViewById(R.id.additional_top_floor_text);
                 text.setText("panic?");
             }
         }
@@ -62,6 +85,9 @@ public class TopFloor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
+
         setContentView(R.layout.activity_top_floor);
     }
 }
