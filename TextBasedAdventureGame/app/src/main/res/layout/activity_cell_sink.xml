@@ -53,7 +53,7 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="Description of cell sink"
+        android:text="@string/cell_sink_description"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
