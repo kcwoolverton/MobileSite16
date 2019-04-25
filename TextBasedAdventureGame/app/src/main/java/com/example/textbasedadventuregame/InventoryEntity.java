@@ -45,6 +45,9 @@ public class InventoryEntity {
     @ColumnInfo(name = "obsidian_knife")
     public boolean obsidian_knife;
 
+    @ColumnInfo(name = "tissue_box")
+    public boolean tissue_box;
+
     @ColumnInfo(name = "escape_boat")
     public boolean escape_boat;
 
@@ -95,6 +98,10 @@ public class InventoryEntity {
     public boolean getObsidianKnife() { return this.obsidian_knife; }
 
     public void setObsidianKnife(boolean obsidian_knife) { this.obsidian_knife = obsidian_knife; }
+
+    public boolean getTissueBox() { return this.tissue_box; }
+
+    public void setTissueBox(boolean tissue_box) { this.tissue_box = tissue_box; }
 
     public boolean getEscapeBoat() { return this.escape_boat; }
 
