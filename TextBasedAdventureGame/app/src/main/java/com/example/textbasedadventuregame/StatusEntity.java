@@ -75,6 +75,11 @@ class StatusEntity {
     @ColumnInfo(name = "knows_about_escape_boat")
     public boolean knows_about_escape_boat;
 
+    @ColumnInfo(name = "has_gps_information")
+    public boolean has_gps_information;
+
+    @ColumnInfo(name = "")
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -162,4 +167,8 @@ class StatusEntity {
     public boolean getKnowsAboutEscapeBoat() { return this.knows_about_escape_boat; }
 
     public void setKnowsAboutEscapeBoat(boolean knows_about_escape_boat) { this.knows_about_escape_boat = knows_about_escape_boat; }
+
+    public boolean getHasGpsInformation() { return this.has_gps_information; }
+
+    public void setHasGpsInformation(boolean has_gps_information) { this.has_gps_information = has_gps_information; }
 }
