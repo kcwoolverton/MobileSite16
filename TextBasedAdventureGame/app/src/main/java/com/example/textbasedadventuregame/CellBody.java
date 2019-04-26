@@ -32,7 +32,8 @@ public class CellBody extends AppCompatActivity {
             if (position == 0) {
                 // They chose to examine the body's head.
                 TextView text = (TextView) findViewById(R.id.additional_cell_body_text);
-                text.setText("dead body head description");
+                text.setText("Your cellmate is bleeding from the forehead. It looks like they hit their head " +
+                        "against the wall so much that you can see the skull beneath the skin.");
             } else if (position == 1) {
                 // They chose to examine the body's torso.
                 TextView text = (TextView) findViewById(R.id.additional_cell_body_text);
@@ -43,16 +44,18 @@ public class CellBody extends AppCompatActivity {
                 boolean hasShiv = inventory.getShiv();
 
                 if (hasShiv) {
-                    text.setText("dead body torso description without shiv");
+                    text.setText("You find nothing else tucked into your cellmate's shirt.");
                 } else {
-                    text.setText("dead body torso description with shiv");
+                    text.setText("Searching your cellmate's shirt, you find a makeshift shiv " +
+                            "tucked into a hidden pocket. You slide the shiv out and take it for yourself.");
                     inventory.setShiv(true);
                     inventoryEntityDao.update(inventory);
                 }
             } else if (position == 2) {
                 // They chose to examine the body's legs.
                 TextView text = (TextView) findViewById(R.id.additional_cell_body_text);
-                text.setText("dead body legs description");
+                text.setText("Your cellmate is wearing the same Foundation issue pants as everyone else. " +
+                        "There is nothing in the pockets.");
             } else if (position == 3) {
                 // They chose to return to cell
                 Intent cellIntent = new Intent(this, PlayerCell.class);

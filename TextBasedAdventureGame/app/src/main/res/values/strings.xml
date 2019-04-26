@@ -17,4 +17,7 @@
     <string name="turn_on_faucet">turn on faucet</string>
     <string name="take_pipe">take pipe</string>
     <string name="return_to_cell">Return to cell</string>
+    <string name="cell_description">This is the cell where you\'ve spent your last few weeks. One wall is entirely made of some type of clear material that neither you nor your cell mate have had much luck breaking. There is some blood on it now, probably made by your cellmate who is lying unmoving in front of the wall. On the other wall, in one corner there is the bunk bed where you and your cellmate sleep while the cell\'s toilet and sink are in the other corner.</string>
+    <string name="cell_sink_description">The cell\'s sink is made of the same shiny metal as the toilet. Above the sink is a mirror set in the wall. Underneath the sink is a pipe that runs directly into the wall. Examining the pipe more closely, you notice that some of the bolts holding one of the sections on look loose.</string>
+    <string name="cell_body_description">Your cellmate lies on the ground in front of the clear wall of your cell. They are lying unmoving, with dried blood all over their face from a wound in their forehead. They are wearing their standard Foundation issue D-Class uniform.</string>
 </resources>

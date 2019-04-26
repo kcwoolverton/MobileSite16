@@ -17,7 +17,7 @@ public class TopFloorCaptainQuarters extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
     public void onNextCaptainQuartersButtonClick(View view) {
-        RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_option_group);
+        RadioGroup group = (RadioGroup) findViewById(R.id.top_floor_captain_quarters);
         int checkedButtonId = group.getCheckedRadioButtonId();
         if (checkedButtonId == -1) {
             Context context = getApplicationContext();

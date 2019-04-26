@@ -31,10 +31,10 @@ public class CellSink extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose look at the mirror
-                Context context = getApplicationContext();
-                CharSequence text1 = "existential crisis";
                 TextView text = (TextView) findViewById(R.id.additional_cell_sink_text);
-                text.setText("existential crisis");
+                text.setText("You look up in the mirror and lock eyes with your reflection. " +
+                        "Is that really you? God, how long have you been in this place? " +
+                        "Your eyes are sunken in and your hair is unkempt. You can barely recognize yourself.");
             } else if (position == 1) {
                 // They chose to turn on the faucet.
                 Context context = getApplicationContext();
@@ -46,18 +46,19 @@ public class CellSink extends AppCompatActivity {
                 boolean tookPipe = status.getTookCellSinkPipe();
 
                 if (tookPipe) {
-                    text.setText("broken faucet on");
+                    text.setText("Water silently pours from the faucet and then down the drain. " +
+                            "From there, it spills out on to the floor from the break in the pipe.");
                 }
 
                 else {
-                    text.setText("regular faucet on");
+                    text.setText("Water silently pours out of the faucet and down the drain.");
                 }
             } else if (position == 2) {
                 // They chose to take pipe
-                Context context = getApplicationContext();
-                CharSequence text1 = "take pipe";
                 TextView text = (TextView) findViewById(R.id.additional_cell_sink_text);
-                text.setText("You took the pipe.");
+                text.setText("Noticing how loose the bolts holding the pipe to the sink look, you " +
+                        "slowly turn them by hand until they come off. Once they're all off, " +
+                        "you are able to take the pipe from the wall.");
 
                 InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
                 List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();

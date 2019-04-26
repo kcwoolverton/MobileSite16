@@ -93,6 +93,9 @@ class StatusEntity {
     @ColumnInfo(name = "COTBG_robot")
     public boolean COTBG_robot;
 
+    @ColumnInfo(name = "has_gps_information")
+    public boolean has_gps_information;
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -204,4 +207,8 @@ class StatusEntity {
     public boolean getCOTBGRobot() { return this.COTBG_robot; }
 
     public void setCOTBGRobot(boolean COTBG_robot) { this.COTBG_robot = COTBG_robot; }
+
+    public boolean getHasGpsInformation() { return this.has_gps_information; }
+
+    public void setHasGpsInformation(boolean has_gps_information) { this.has_gps_information = has_gps_information; }
 }

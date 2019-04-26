@@ -30,7 +30,8 @@ public class PlayerCell extends AppCompatActivity {
             if (position == 0) {
                 // They chose look at the toilet
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("toilet description here");
+                text.setText("The metal toilet is affixed directly to the wall. There is a small" +
+                        " button above it for flushing. Unremarkable as far as prison toilets go.");
             } else if (position == 1) {
                 // They chose look at the glass wall
                 Intent cellWallIntent = new Intent(this, CellWall.class);
@@ -46,7 +47,10 @@ public class PlayerCell extends AppCompatActivity {
             } else if (position == 3) {
                 // They chose look at the bed
                 TextView text = (TextView) findViewById(R.id.additional_cell_text);
-                text.setText("Bed description here");
+                text.setText("The bunk bed you and your cellmate use have their frames attached directly " +
+                        "to the wall. The mattress is better than sleeping on the metal frame, but not by much. " +
+                        "Neither your nor your cellmate's bed is made. The messed up sheets are attached " +
+                        "directly to the bed to prevent prisoners from taking them.");
             } else if (position == 4) {
                 // They chose look at the body
                 Intent cellBodyIntent = new Intent(this, CellBody.class);
