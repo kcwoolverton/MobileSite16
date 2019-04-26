@@ -104,7 +104,7 @@ public class Scp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foundation_employee_living_quarters);
+        setContentView(R.layout.activity_scp);
 
         DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
 

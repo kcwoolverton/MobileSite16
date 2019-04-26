@@ -75,6 +75,24 @@ class StatusEntity {
     @ColumnInfo(name = "knows_about_escape_boat")
     public boolean knows_about_escape_boat;
 
+    @ColumnInfo(name = "promised_to_help_robot")
+    public boolean promised_to_help_robot;
+
+    @ColumnInfo(name = "attacked_robot")
+    public boolean attacked_robot;
+
+    @ColumnInfo(name = "subdued_robot")
+    public boolean subdued_robot;
+
+    @ColumnInfo(name = "took_robot")
+    public boolean took_robot;
+
+    @ColumnInfo(name = "abandoned_robot")
+    public boolean abandoned_robot;
+
+    @ColumnInfo(name = "COTBG_robot")
+    public boolean COTBG_robot;
+
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
@@ -162,4 +180,28 @@ class StatusEntity {
     public boolean getKnowsAboutEscapeBoat() { return this.knows_about_escape_boat; }
 
     public void setKnowsAboutEscapeBoat(boolean knows_about_escape_boat) { this.knows_about_escape_boat = knows_about_escape_boat; }
+
+    public boolean getPromisedToHelpRobot() { return this.promised_to_help_robot; }
+
+    public void setPromisedToHelpRobot(boolean promised_to_help_robot) { this.promised_to_help_robot = promised_to_help_robot; }
+
+    public boolean getAttackedRobot() { return this.attacked_robot; }
+
+    public void setAttackedRobot(boolean attacked_robot) { this.attacked_robot = attacked_robot; }
+
+    public boolean getSubduedRobot() { return this.subdued_robot; }
+
+    public void setSubduedRobot(boolean subdued_robot) { this.subdued_robot = subdued_robot; }
+
+    public boolean getTookRobot() { return this.knows_about_escape_boat; }
+
+    public void setTookRobot(boolean took_robot) { this.took_robot = took_robot; }
+
+    public boolean getAbandonedRobot() { return this.abandoned_robot; }
+
+    public void setAbandonedRobot(boolean abandoned_robot) { this.abandoned_robot = abandoned_robot; }
+
+    public boolean getCOTBGRobot() { return this.COTBG_robot; }
+
+    public void setCOTBGRobot(boolean COTBG_robot) { this.COTBG_robot = COTBG_robot; }
 }
