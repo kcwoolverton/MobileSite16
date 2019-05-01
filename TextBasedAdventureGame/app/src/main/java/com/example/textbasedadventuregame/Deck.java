@@ -14,6 +14,8 @@ import android.widget.Toast;
 public class Deck extends AppCompatActivity {
     public static AppDatabase DBINSTANCE;
 
+    //TODO: Make it so that you can win the game haha
+
     public void onNextDeckButtonClick(View view) {
         RadioGroup group = (RadioGroup) findViewById(R.id.deck_option_group);
         int checkedButtonId = group.getCheckedRadioButtonId();
