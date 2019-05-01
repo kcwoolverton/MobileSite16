@@ -50,6 +50,7 @@
 
     <TextView
         android:id="@+id/textView3"
+        android:autoSizeTextType="uniform"
         android:layout_width="347dp"
         android:layout_height="202dp"
         android:layout_alignParentEnd="true"
@@ -78,6 +79,7 @@
 
     <TextView
         android:id="@+id/additional_cell_text"
+        android:autoSizeTextType="uniform"
         android:layout_width="349dp"
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"

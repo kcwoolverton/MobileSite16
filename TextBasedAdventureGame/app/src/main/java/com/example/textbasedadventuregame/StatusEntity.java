@@ -78,8 +78,6 @@ class StatusEntity {
     @ColumnInfo(name = "has_gps_information")
     public boolean has_gps_information;
 
-    @ColumnInfo(name = "")
-
     public boolean getTookCellSinkPipe() { return this.took_cell_sink_pipe; }
 
     public void setTookCellSinkPipe(boolean took_cell_sink_pipe) { this.took_cell_sink_pipe = took_cell_sink_pipe; }
