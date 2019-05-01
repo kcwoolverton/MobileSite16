@@ -21,19 +21,19 @@
             android:id="@+id/from_cq_go_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go up the stairs" />
+            android:text="Go up the stairs." />
 
         <RadioButton
             android:id="@+id/from_cq_go_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go down the stairs" />
+            android:text="Go down the stairs." />
 
         <RadioButton
             android:id="@+id/return_to_cq_stairwell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter the Crew Quarters" />
+            android:text="Enter the Crew Quarters." />
     </RadioGroup>
 
     <TextView
@@ -47,7 +47,7 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="Description of the crew quarters stairwell"
+        android:text="These stairs look better than the stairs leading out of the prison floor. The sign reads Crew Quarters."
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 

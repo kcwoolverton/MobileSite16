@@ -21,43 +21,43 @@
             android:id="@+id/go_to_armory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the armory" />
+            android:text="Go to the Foundation armory," />
 
         <RadioButton
             android:id="@+id/dr_1_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the first open room" />
+            android:text="Go to the first open room." />
 
         <RadioButton
             android:id="@+id/dr_2_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the second open room" />
+            android:text="Go to the second open room." />
 
         <RadioButton
             android:id="@+id/dr_3_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the third open room" />
+            android:text="Go to the third open room." />
 
         <RadioButton
             android:id="@+id/sec_guard_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the fourth open room" />
+            android:text="Go to the fourth open room." />
 
         <RadioButton
             android:id="@+id/go_to_scp_lounge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the floor's lounge" />
+            android:text="Go to the Foundation Employee's lounge." />
 
         <RadioButton
             android:id="@+id/return_to_employee_stairwell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go back to the stairs" />
+            android:text="Go back to the stairs." />
     </RadioGroup>
 
     <TextView
@@ -71,7 +71,7 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:layout_marginBottom="500dp"
-        android:text="Description of foundation employee living quarters"
+        android:text="@string/foundation_employee_living_quarters_description"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 

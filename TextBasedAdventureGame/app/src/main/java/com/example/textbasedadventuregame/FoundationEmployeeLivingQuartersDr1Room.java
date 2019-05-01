@@ -32,19 +32,26 @@ public class FoundationEmployeeLivingQuartersDr1Room extends AppCompatActivity {
             if (position == 0) {
                 // They chose to search through the closet
                 TextView text = (TextView) findViewById(R.id.additional_quarters_dr1_text);
-                text.setText("closet");
+                text.setText("You look through the room's closet. You see Dr. Millard written on " +
+                        "many of the lab coats. It looks like the Dr. Millard was a man of one " +
+                        "style, as all of the pants and shirts are of the same basic design.");
             } else if (position == 1) {
                 // They chose to go through the bathroom
                 TextView text = (TextView) findViewById(R.id.additional_quarters_dr1_text);
-                text.setText("bathroom");
+                text.setText("The room has a small bathroom attached to it. It has a shower, " +
+                        "toilet, and sink. On the sink is a toothbrush and some toothpaste, and " +
+                        "in the shower is a bottle of shampoo and a half-used bar of soap.");
             } else if (position == 2) {
                 // They chose to go through the desk
                 TextView text = (TextView) findViewById(R.id.additional_quarters_dr1_text);
-                text.setText("desk");
+                text.setText("The room has a desk covered in papers with notes about some of the " +
+                        "locations the ship has visited.");
             } else if (position == 3) {
                 // They chose to look at the posters
                 TextView text = (TextView) findViewById(R.id.additional_quarters_dr1_text);
-                text.setText("posters");
+                text.setText("On the wall is a poster with a cat hanging off a tree branch " +
+                        "with the words \"Hang in There\" written on it. The only weird thing " +
+                        "is that the cat only has its upper half");
             } else if (position == 4) {
                 // They chose to return to the employee quarters
                 Intent quartersIntent = new Intent(this, FoundationEmployeeLivingQuarters.class);

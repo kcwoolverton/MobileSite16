@@ -13,33 +13,33 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="213dp">
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="98dp">
 
         <RadioButton
             android:id="@+id/examine_other_cells"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Look at other cells" />
+            android:text="Look at the other cells." />
 
         <RadioButton
             android:id="@+id/examine_medbay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the medbay" />
+            android:text="Go to the medbay." />
 
         <RadioButton
             android:id="@+id/examine_showers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Examine the showers" />
+            android:text="Examine the showers." />
 
         <RadioButton
             android:id="@+id/go_to_checkpoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Look at the security checkpoint" />
+            android:text="Look at one of the security checkpoints." />
 
         <RadioButton
             android:id="@+id/return_to_cell"
@@ -50,41 +50,41 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="347dp"
-        android:layout_height="202dp"
+        android:layout_width="344dp"
+        android:layout_height="278dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:layout_marginBottom="500dp"
-        android:text="Description of prison floor"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="424dp"
+        android:text="@string/prison_description"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/prison_next_button"
-        android:onClick="onNextPrisonButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="154dp"
-        android:layout_marginRight="154dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="onNextPrisonButtonClick"
         android:text="Next" />
 
     <TextView
         android:id="@+id/additional_prison_text"
-        android:layout_width="349dp"
-        android:layout_height="91dp"
+        android:layout_width="348dp"
+        android:layout_height="127dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginBottom="390dp" />
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="277dp" />
 
 </RelativeLayout>

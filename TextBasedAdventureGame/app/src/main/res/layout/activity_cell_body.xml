@@ -13,9 +13,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="213dp">
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="99dp">
 
         <RadioButton
             android:id="@+id/examine_head"
@@ -44,41 +44,41 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="347dp"
-        android:layout_height="202dp"
+        android:layout_width="344dp"
+        android:layout_height="288dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:layout_marginBottom="500dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="414dp"
         android:text="@string/cell_body_description"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/intro_cell_next_button"
-        android:onClick="onNextCellButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="154dp"
-        android:layout_marginRight="154dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginRight="158dp"
+        android:layout_marginBottom="28dp"
+        android:onClick="onNextCellButtonClick"
         android:text="Next" />
 
     <TextView
         android:id="@+id/additional_cell_body_text"
         android:layout_width="349dp"
-        android:layout_height="91dp"
+        android:layout_height="124dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginBottom="390dp" />
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="258dp" />
 
 </RelativeLayout>

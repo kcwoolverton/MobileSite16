@@ -42,21 +42,25 @@ public class PrisonMedbay extends AppCompatActivity {
 
                 if (tookMedkit) {
                     TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
-                    text.setText("cabinets description without medkit");
+                    text.setText("The cabinets are sparsely stocked with some bandages and antiseptic.");
                 } else {
                     TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
-                    text.setText("cabinets description with medkit");
+                    text.setText("The cabinets are sparsely stocked with some bandages and antiseptic. " +
+                            "Searching through it, you find a well stocked medkit behind " +
+                            "some of the bottles. Might as well take it, just in case.");
                     inventory.setMedkit(true);
                     inventoryEntityDao.update(inventory);
                 }
             } else if (position == 1) {
                 // They chose to go through the papers
                 TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
-                text.setText("papers");
+                text.setText("On a counter are a few open medical records about some of the other " +
+                        "prisoners. You don't see anything abnormal about them.");
             } else if (position == 2) {
                 // They chose to go through the desk
                 TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
-                text.setText("desk");
+                text.setText("Inside the desk are some medical records and notes on the other " +
+                        "prisoners. There are also some pens and Post-Its, but not much else.");
             } else if (position == 3) {
                 // They chose to go through the labcoat
                 StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
@@ -70,10 +74,13 @@ public class PrisonMedbay extends AppCompatActivity {
 
                 if (tookPrisonFloorIdCard) {
                     TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
-                    text.setText("labcoat without id card");
+                    text.setText("It looks like one of the doctors hung up their lab coat before " +
+                            "leaving.");
                 } else {
                     TextView text = (TextView) findViewById(R.id.additional_prison_medbay_text);
-                    text.setText("labcoat with id card");
+                    text.setText("It looks like one of the doctors hung up their lab coat before " +
+                            "leaving. Rifling through the pockets, you find the doctor's ID card. " +
+                            "Maybe you could use this to get through the checkpoint.");
                     inventory.setPrisonFloorIdCard(true);
                     inventoryEntityDao.update(inventory);
                     status.setTookPrisonIdCard(true);
@@ -93,9 +100,10 @@ public class PrisonMedbay extends AppCompatActivity {
                 InventoryEntity inventory = inventoryList.get(0);
 
                 if (tookScalpel) {
-                    text.setText("medical instruments without scalpel");
+                    text.setText("On a tray are a series of medical instruments.");
                 } else {
-                    text.setText("medical instruments with scalpel");
+                    text.setText("On a tray are a series of medical instruments. You take a scalpel," +
+                            " just in case.");
                     inventory.setScalpel(true);
                     status.setTookPrisonMedbayScalpel(true);
                     inventoryEntityDao.update(inventory);

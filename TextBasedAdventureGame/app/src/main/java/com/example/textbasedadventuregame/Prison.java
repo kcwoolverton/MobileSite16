@@ -30,7 +30,9 @@ public class Prison extends AppCompatActivity {
             if (position == 0) {
                 // They chose to examine other cells
                 TextView text = (TextView) findViewById(R.id.additional_prison_text);
-                text.setText("other cell description");
+                text.setText("The other cells like like yours did. The same bed, the same sink, " +
+                        "and the same blood on the walls. The other cells have both prisoners " +
+                        "lying unconscious in front of the walls.");
             } else if (position == 1) {
                 // They chose to examine medbay
                 Intent medbayIntent = new Intent(this, PrisonMedbay.class);
@@ -40,7 +42,9 @@ public class Prison extends AppCompatActivity {
             } else if (position == 2) {
                 // They chose to examine showers
                 TextView text = (TextView) findViewById(R.id.additional_prison_text);
-                text.setText("examine showers text");
+                text.setText("The showers have soap and shampoo dispensers built into the walls. " +
+                        "The showers themselves are designed for a complete lack of privacy, so " +
+                        "that the guards can watch the prisoners while they shower.");
             } else if (position == 3) {
                 // They chose to look at the checkpoint
                 Intent checkpointIntent = new Intent(this, PrisonCheckpoint.class);

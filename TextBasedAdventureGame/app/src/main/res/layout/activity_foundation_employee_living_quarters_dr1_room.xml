@@ -15,76 +15,76 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:layout_marginBottom="213dp">
+        android:layout_marginBottom="97dp">
 
         <RadioButton
             android:id="@+id/search_closet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search through the closet" />
+            android:text="Search through the closet." />
 
         <RadioButton
             android:id="@+id/go_through_bathroom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search the bathroom" />
+            android:text="Search the bathroom." />
 
         <RadioButton
             android:id="@+id/go_through_desk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go through the desk" />
+            android:text="Examine the desk." />
 
         <RadioButton
             android:id="@+id/look_at_posters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Look at the posters on the wall" />
+            android:text="Look at the poster on the wall.l" />
 
         <RadioButton
             android:id="@+id/return_to_quarters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go back to the foundation employee living quarters" />
+            android:text="Go back to the Foundation Employee Living Quarters." />
     </RadioGroup>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="347dp"
-        android:layout_height="202dp"
+        android:layout_height="281dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:layout_marginBottom="500dp"
-        android:text="Description of dr 1 room"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="421dp"
+        android:text="@string/foundation_employee_living_quarters_dr1_room_description"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/foundation_employees_dr1_next_button"
-        android:onClick="onNextFoundationEmployeesDr1ButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="154dp"
-        android:layout_marginRight="154dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginRight="156dp"
+        android:layout_marginBottom="33dp"
+        android:onClick="onNextFoundationEmployeesDr1ButtonClick"
         android:text="Next" />
 
     <TextView
         android:id="@+id/additional_quarters_dr1_text"
-        android:layout_width="349dp"
-        android:layout_height="91dp"
+        android:layout_width="348dp"
+        android:layout_height="122dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginBottom="390dp" />
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="280dp" />
 
 </RelativeLayout>

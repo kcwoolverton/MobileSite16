@@ -21,31 +21,31 @@
             android:id="@+id/galley"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the galley" />
+            android:text="Go to the galley." />
 
         <RadioButton
             android:id="@+id/examine_crew_medbay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the crew's medbay" />
+            android:text="Go to the crew's medbay." />
 
         <RadioButton
             android:id="@+id/go_to_gym"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Examine the crew's gym" />
+            android:text="Examine the crew's gym." />
 
         <RadioButton
             android:id="@+id/go_to_crew_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Look at the crew's rooms" />
+            android:text="Look at the crew's rooms." />
 
         <RadioButton
             android:id="@+id/go_to_crew_stairs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to the stairs" />
+            android:text="Go to the stairs." />
     </RadioGroup>
 
     <TextView

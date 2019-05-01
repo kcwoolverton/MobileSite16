@@ -13,66 +13,66 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="213dp">
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="115dp">
 
         <RadioButton
             android:id="@+id/examine_security_station"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Examine security station" />
+            android:text="Examine the security station." />
 
         <RadioButton
             android:id="@+id/open_stairwell_door"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Open the stairwell door" />
+            android:text="Open the checkpoint door." />
 
         <RadioButton
             android:id="@+id/return_to_prison"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go back to the cells" />
+            android:text="Go back to the cells." />
     </RadioGroup>
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="347dp"
-        android:layout_height="202dp"
+        android:layout_width="342dp"
+        android:layout_height="339dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:layout_marginBottom="500dp"
-        android:text="Description of prison checkpoint"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="363dp"
+        android:text="@string/prison_checkpoint_description"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/prison_checkpoint_next_button"
-        android:onClick="onNextPrisonCheckpointButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="154dp"
-        android:layout_marginRight="154dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginRight="158dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="onNextPrisonCheckpointButtonClick"
         android:text="Next" />
 
     <TextView
         android:id="@+id/additional_prison_checkpoint_text"
-        android:layout_width="349dp"
-        android:layout_height="91dp"
+        android:layout_width="346dp"
+        android:layout_height="108dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginBottom="390dp" />
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="231dp" />
 
 </RelativeLayout>

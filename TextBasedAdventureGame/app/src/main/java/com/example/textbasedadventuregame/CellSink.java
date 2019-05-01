@@ -66,6 +66,12 @@ public class CellSink extends AppCompatActivity {
                 inventory.setPipe(true);
                 inventoryEntityDao.update(inventory);
 
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+                status.setTookCellSinkPipe(true);
+                statusEntityDao.update(status);
+
                 RadioButton button = (RadioButton) group.getChildAt(2);
                 button.setVisibility(View.GONE);
             } else if (position == 3) {
@@ -88,10 +94,10 @@ public class CellSink extends AppCompatActivity {
         setContentView(R.layout.activity_cell_sink);
         DBINSTANCE = AppDatabase.getDatabase(getApplicationContext());
 
-        InventoryEntityDao inventoryEntityDao = DBINSTANCE.inventoryEntityDao();
-        List<InventoryEntity> inventoryList = inventoryEntityDao.getAll();
-        InventoryEntity inventory = inventoryList.get(0);
-        boolean hasPipe = inventory.getPipe();
+        StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+        List<StatusEntity> statusList = statusEntityDao.getAll();
+        StatusEntity status = statusList.get(0);
+        boolean hasPipe = status.getTookCellSinkPipe();
 
         if (hasPipe) {
             RadioGroup group = (RadioGroup) findViewById(R.id.intro_cell_sink_option_group);

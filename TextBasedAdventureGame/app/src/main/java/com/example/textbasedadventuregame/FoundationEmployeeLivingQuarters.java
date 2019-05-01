@@ -43,37 +43,37 @@ public class FoundationEmployeeLivingQuarters extends AppCompatActivity {
                     text.setText("The door is locked. An ID scanner to the side of the door is flashing red.");
                 }
             } else if (position == 1) {
-                // They chose to examine Dr. TODO's room
+                // They chose to examine Dr. Millard's room.
                 Intent room1Intent = new Intent(this, FoundationEmployeeLivingQuartersDr1Room.class);
 
                 // Start the new activity.
                 startActivity(room1Intent);
             } else if (position == 2) {
-                // They chose to examine Dr. TODO's room
+                // They chose to examine Dr. Alvarez's room.
                 Intent room2Intent = new Intent(this, FoundationEmployeeLivingQuartersDr2Room.class);
 
                 // Start the new activity.
                 startActivity(room2Intent);
             } else if (position == 3) {
-                // They chose to examine Dr. TODO's room
+                // They chose to examine Dr. Shen's room.
                 Intent room3Intent = new Intent(this, FoundationEmployeeLivingQuartersDr3Room.class);
 
                 // Start the new activity.
                 startActivity(room3Intent);
             } else if (position == 4) {
-                // They chose to examine Sec. Guard TODO's room
+                // They chose to examine Sec. Guard Samson's room.
                 Intent room4Intent = new Intent(this, FoundationEmployeeLivingQuartersSecurityGuardRoom.class);
 
                 // Start the new activity.
                 startActivity(room4Intent);
             } else if (position == 5) {
-                // They chose to examine the recreational lounge
+                // They chose to examine the recreational lounge.
                 Intent loungeIntent = new Intent(this, FoundationEmployeeLivingQuartersLounge.class);
 
                 // Start the new activity.
                 startActivity(loungeIntent);
             } else if (position == 6) {
-                // They chose to return to go to the stairwell
+                // They chose to return to go to the stairwell.
                 Intent stairIntent = new Intent(this, FoundationEmployeeLivingQuartersStairwell.class);
 
                 // Start the new activity.

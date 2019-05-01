@@ -15,7 +15,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:layout_marginBottom="213dp">
+        android:layout_marginBottom="97dp">
 
         <RadioButton
             android:id="@+id/search_closet"
@@ -69,29 +69,29 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="347dp"
-        android:layout_height="202dp"
+        android:layout_height="217dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:layout_marginBottom="500dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="485dp"
         android:text="Description of dr 2 room"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/foundation_employees_dr2_next_button"
-        android:onClick="onNextFoundationEmployeesDr2ButtonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="154dp"
-        android:layout_marginRight="154dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginRight="158dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="onNextFoundationEmployeesDr2ButtonClick"
         android:text="Next" />
 
     <TextView
@@ -103,6 +103,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
-        android:layout_marginBottom="390dp" />
+        android:layout_marginBottom="378dp" />
 
 </RelativeLayout>

@@ -30,6 +30,9 @@ class StatusEntity {
     @ColumnInfo(name = "fed_josie")
     public boolean fed_josie;
 
+    @ColumnInfo(name = "took_josie_id_card")
+    public boolean took_josie_id_card;
+
     @ColumnInfo(name = "need_supplies")
     public boolean need_supplies;
 
@@ -123,6 +126,10 @@ class StatusEntity {
     public boolean getFedJosie() { return this.fed_josie; }
 
     public void setFedJosie(boolean fed_josie) { this.fed_josie = fed_josie; }
+
+    public boolean getTookJosieIdCard() { return this.took_josie_id_card; }
+
+    public void setTookJosieIdCard(boolean took_josie_id_card) { this.took_josie_id_card = took_josie_id_card; };
 
     public boolean getNeedSupplies() { return this.need_supplies; }
 

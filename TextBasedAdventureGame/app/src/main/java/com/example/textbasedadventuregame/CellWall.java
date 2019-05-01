@@ -31,12 +31,28 @@ public class CellWall extends AppCompatActivity {
             int position = group.indexOfChild(selectedButton);
             if (position == 0) {
                 // They chose to examine crack in wall
-                TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
-                text.setText("crack in wall description");
+                StatusEntityDao statusEntityDao = DBINSTANCE.statusEntityDao();
+                List<StatusEntity> statusList = statusEntityDao.getAll();
+                StatusEntity status = statusList.get(0);
+                boolean brokeCellWall = status.getBrokeCellWall();
+
+                if (brokeCellWall) {
+                    TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
+                    text.setText("There is a hole in the wall from where you smashed it with the pipe. " +
+                            "It's large enough to fit through, though you'll need to be careful not " +
+                            "to accidentally cut yourself on the edges of the hole.");
+                } else {
+                    TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
+                    text.setText("It looks like your cell mate cracked their wall by slamming " +
+                            "their head against the wall over and over. This is the first time you've " +
+                            "seen one of these walls with any damage. Maybe you could break it " +
+                            "with something?");
+                }
             } else if (position == 1) {
                 // They chose to punch wall
                 TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
-                text.setText("punched wall");
+                text.setText("You slam your first against the wall. It bounces off without hurting " +
+                        "the wall, but now your hand hurts like hell.");
             } else if (position == 2) {
                 // Leave through the already broken wall.
                 Intent prisonIntent = new Intent(this, Prison.class);
@@ -52,7 +68,7 @@ public class CellWall extends AppCompatActivity {
 
                 // Tear down that wall!
                 TextView text = (TextView) findViewById(R.id.additional_cell_wall_text);
-                text.setText("You lift the pipe into the air and bring it down on the crack that your roommate created. The crack grows in size. You hit it again, and the glass shatters, leaving a gap large enough for you to fit through.");
+                text.setText("You lift the pipe into the air and bring it down on the crack that your cellmate created. The crack grows in size. You hit it again, and the glass shatters, leaving a gap large enough for you to fit through.");
                 RadioButton button = (RadioButton) group.getChildAt(2);
                 button.setVisibility(View.VISIBLE);
                 RadioButton originalButton = (RadioButton) group.getChildAt(3);

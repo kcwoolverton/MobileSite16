@@ -34,7 +34,8 @@ public class PrisonCheckpoint extends AppCompatActivity {
             if (position == 0) {
                 // They chose to examine security station
                 TextView text = (TextView) findViewById(R.id.additional_prison_checkpoint_text);
-                text.setText("security station desc");
+                text.setText("On the side of the checkpoint opposite the cells is a security station " +
+                        "with a set of monitors. This must be where the guards stay.");
             } else if (position == 1) {
                 // They chose to try to open the stairwell door
                 if (hasId) {
